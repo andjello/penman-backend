@@ -1,0 +1,3118 @@
+2024-11-07 13:21:57,108 - handwriting.generator - INFO - Initializing Handwriting Model...
+2024-11-07 13:21:57,108 - root - INFO - 
+new run with parameters:
+{'attention_mixture_components': 10,
+ 'batch_size': 32,
+ 'batch_sizes': [32, 64, 64],
+ 'beta1_decay': 0.9,
+ 'beta1_decays': [0.9, 0.9, 0.9],
+ 'checkpoint_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/checkpoints',
+ 'early_stopping_steps': 1500,
+ 'enable_parameter_averaging': False,
+ 'grad_clip': 10,
+ 'keep_prob_scalar': 1.0,
+ 'learning_rate': 0.0001,
+ 'learning_rates': [0.0001, 5e-05, 2e-05],
+ 'log_dir': '/home/parthsolanke/dev/Penman/backend/logs',
+ 'log_interval': 20,
+ 'logging_level': 20,
+ 'loss_averaging_window': 100,
+ 'lstm_size': 400,
+ 'min_steps_to_checkpoint': 2000,
+ 'num_restarts': 2,
+ 'num_training_steps': 100000,
+ 'optimizer': 'rms',
+ 'output_mixture_components': 20,
+ 'output_units': 121,
+ 'patiences': [1500, 1000, 500],
+ 'prediction_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/predictions',
+ 'reader': None,
+ 'regularization_constant': 0.0,
+ 'restart_idx': 0,
+ 'validation_batch_size': 32,
+ 'warm_start_init_step': 17900}
+2024-11-07 13:21:59,412 - root - INFO - all parameters:
+2024-11-07 13:21:59,413 - root - INFO - [('Variable:0', []),
+ ('Variable_1:0', []),
+ ('Variable_2:0', []),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp_1:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp_1:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp:0', [30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp_1:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp_1:0', [1600]),
+ ('rnn/gmm/weights/RMSProp:0', [400, 121]),
+ ('rnn/gmm/weights/RMSProp_1:0', [400, 121]),
+ ('rnn/gmm/biases/RMSProp:0', [121]),
+ ('rnn/gmm/biases/RMSProp_1:0', [121])]
+2024-11-07 13:21:59,413 - root - INFO - trainable parameters:
+2024-11-07 13:21:59,414 - root - INFO - [('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121])]
+2024-11-07 13:21:59,414 - root - INFO - trainable parameter count:
+2024-11-07 13:21:59,414 - root - INFO - 3632431
+2024-11-07 13:21:59,465 - root - INFO - built graph
+2024-11-07 13:21:59,469 - root - INFO - restoring model parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-07 13:21:59,469 - tensorflow - INFO - Restoring parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-07 13:28:39,993 - handwriting.generator - INFO - Initializing Handwriting Model...
+2024-11-07 13:28:39,994 - root - INFO - 
+new run with parameters:
+{'attention_mixture_components': 10,
+ 'batch_size': 32,
+ 'batch_sizes': [32, 64, 64],
+ 'beta1_decay': 0.9,
+ 'beta1_decays': [0.9, 0.9, 0.9],
+ 'checkpoint_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/checkpoints',
+ 'early_stopping_steps': 1500,
+ 'enable_parameter_averaging': False,
+ 'grad_clip': 10,
+ 'keep_prob_scalar': 1.0,
+ 'learning_rate': 0.0001,
+ 'learning_rates': [0.0001, 5e-05, 2e-05],
+ 'log_dir': '/home/parthsolanke/dev/Penman/backend/logs',
+ 'log_interval': 20,
+ 'logging_level': 20,
+ 'loss_averaging_window': 100,
+ 'lstm_size': 400,
+ 'min_steps_to_checkpoint': 2000,
+ 'num_restarts': 2,
+ 'num_training_steps': 100000,
+ 'optimizer': 'rms',
+ 'output_mixture_components': 20,
+ 'output_units': 121,
+ 'patiences': [1500, 1000, 500],
+ 'prediction_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/predictions',
+ 'reader': None,
+ 'regularization_constant': 0.0,
+ 'restart_idx': 0,
+ 'validation_batch_size': 32,
+ 'warm_start_init_step': 17900}
+2024-11-07 13:28:42,887 - root - INFO - all parameters:
+2024-11-07 13:28:42,888 - root - INFO - [('Variable:0', []),
+ ('Variable_1:0', []),
+ ('Variable_2:0', []),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp_1:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp_1:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp:0', [30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp_1:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp_1:0', [1600]),
+ ('rnn/gmm/weights/RMSProp:0', [400, 121]),
+ ('rnn/gmm/weights/RMSProp_1:0', [400, 121]),
+ ('rnn/gmm/biases/RMSProp:0', [121]),
+ ('rnn/gmm/biases/RMSProp_1:0', [121])]
+2024-11-07 13:28:42,888 - root - INFO - trainable parameters:
+2024-11-07 13:28:42,889 - root - INFO - [('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121])]
+2024-11-07 13:28:42,889 - root - INFO - trainable parameter count:
+2024-11-07 13:28:42,889 - root - INFO - 3632431
+2024-11-07 13:28:42,940 - root - INFO - built graph
+2024-11-07 13:28:42,944 - root - INFO - restoring model parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-07 13:28:42,944 - tensorflow - INFO - Restoring parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-07 13:28:43,493 - uvicorn.error - INFO - Started server process [64970]
+2024-11-07 13:28:43,494 - uvicorn.error - INFO - Waiting for application startup.
+2024-11-07 13:28:43,494 - uvicorn.error - INFO - Application startup complete.
+2024-11-07 13:28:43,495 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2024-11-07 13:37:49,258 - uvicorn.error - INFO - Shutting down
+2024-11-07 13:37:49,373 - uvicorn.error - INFO - Waiting for application shutdown.
+2024-11-07 13:37:49,374 - uvicorn.error - INFO - Application shutdown complete.
+2024-11-07 13:37:49,374 - uvicorn.error - INFO - Finished server process [64970]
+2024-11-12 18:17:29,631 - handwriting.generator - INFO - Initializing Handwriting Model...
+2024-11-12 18:17:29,633 - root - INFO - 
+new run with parameters:
+{'attention_mixture_components': 10,
+ 'batch_size': 32,
+ 'batch_sizes': [32, 64, 64],
+ 'beta1_decay': 0.9,
+ 'beta1_decays': [0.9, 0.9, 0.9],
+ 'checkpoint_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/checkpoints',
+ 'early_stopping_steps': 1500,
+ 'enable_parameter_averaging': False,
+ 'grad_clip': 10,
+ 'keep_prob_scalar': 1.0,
+ 'learning_rate': 0.0001,
+ 'learning_rates': [0.0001, 5e-05, 2e-05],
+ 'log_dir': '/home/parthsolanke/dev/Penman/backend/logs',
+ 'log_interval': 20,
+ 'logging_level': 20,
+ 'loss_averaging_window': 100,
+ 'lstm_size': 400,
+ 'min_steps_to_checkpoint': 2000,
+ 'num_restarts': 2,
+ 'num_training_steps': 100000,
+ 'optimizer': 'rms',
+ 'output_mixture_components': 20,
+ 'output_units': 121,
+ 'patiences': [1500, 1000, 500],
+ 'prediction_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/predictions',
+ 'reader': None,
+ 'regularization_constant': 0.0,
+ 'restart_idx': 0,
+ 'validation_batch_size': 32,
+ 'warm_start_init_step': 17900}
+2024-11-12 18:17:33,233 - root - INFO - all parameters:
+2024-11-12 18:17:33,233 - root - INFO - [('Variable:0', []),
+ ('Variable_1:0', []),
+ ('Variable_2:0', []),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp_1:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp_1:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp:0', [30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp_1:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp_1:0', [1600]),
+ ('rnn/gmm/weights/RMSProp:0', [400, 121]),
+ ('rnn/gmm/weights/RMSProp_1:0', [400, 121]),
+ ('rnn/gmm/biases/RMSProp:0', [121]),
+ ('rnn/gmm/biases/RMSProp_1:0', [121])]
+2024-11-12 18:17:33,234 - root - INFO - trainable parameters:
+2024-11-12 18:17:33,234 - root - INFO - [('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121])]
+2024-11-12 18:17:33,234 - root - INFO - trainable parameter count:
+2024-11-12 18:17:33,235 - root - INFO - 3632431
+2024-11-12 18:17:33,284 - root - INFO - built graph
+2024-11-12 18:17:33,287 - root - INFO - restoring model parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-12 18:17:33,288 - tensorflow - INFO - Restoring parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-12 18:19:04,265 - handwriting.generator - INFO - Initializing Handwriting Model...
+2024-11-12 18:19:04,266 - root - INFO - 
+new run with parameters:
+{'attention_mixture_components': 10,
+ 'batch_size': 32,
+ 'batch_sizes': [32, 64, 64],
+ 'beta1_decay': 0.9,
+ 'beta1_decays': [0.9, 0.9, 0.9],
+ 'checkpoint_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/checkpoints',
+ 'early_stopping_steps': 1500,
+ 'enable_parameter_averaging': False,
+ 'grad_clip': 10,
+ 'keep_prob_scalar': 1.0,
+ 'learning_rate': 0.0001,
+ 'learning_rates': [0.0001, 5e-05, 2e-05],
+ 'log_dir': '/home/parthsolanke/dev/Penman/backend/logs',
+ 'log_interval': 20,
+ 'logging_level': 20,
+ 'loss_averaging_window': 100,
+ 'lstm_size': 400,
+ 'min_steps_to_checkpoint': 2000,
+ 'num_restarts': 2,
+ 'num_training_steps': 100000,
+ 'optimizer': 'rms',
+ 'output_mixture_components': 20,
+ 'output_units': 121,
+ 'patiences': [1500, 1000, 500],
+ 'prediction_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/predictions',
+ 'reader': None,
+ 'regularization_constant': 0.0,
+ 'restart_idx': 0,
+ 'validation_batch_size': 32,
+ 'warm_start_init_step': 17900}
+2024-11-12 18:19:08,228 - root - INFO - all parameters:
+2024-11-12 18:19:08,229 - root - INFO - [('Variable:0', []),
+ ('Variable_1:0', []),
+ ('Variable_2:0', []),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp_1:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp_1:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp:0', [30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp_1:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp_1:0', [1600]),
+ ('rnn/gmm/weights/RMSProp:0', [400, 121]),
+ ('rnn/gmm/weights/RMSProp_1:0', [400, 121]),
+ ('rnn/gmm/biases/RMSProp:0', [121]),
+ ('rnn/gmm/biases/RMSProp_1:0', [121])]
+2024-11-12 18:19:08,230 - root - INFO - trainable parameters:
+2024-11-12 18:19:08,230 - root - INFO - [('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121])]
+2024-11-12 18:19:08,230 - root - INFO - trainable parameter count:
+2024-11-12 18:19:08,231 - root - INFO - 3632431
+2024-11-12 18:19:08,279 - root - INFO - built graph
+2024-11-12 18:19:08,283 - root - INFO - restoring model parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-12 18:19:08,283 - tensorflow - INFO - Restoring parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-12 18:19:08,696 - uvicorn.error - INFO - Started server process [250654]
+2024-11-12 18:19:08,697 - uvicorn.error - INFO - Waiting for application startup.
+2024-11-12 18:19:08,697 - uvicorn.error - INFO - Application startup complete.
+2024-11-12 18:19:08,698 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2024-11-12 18:21:03,684 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-12 18:22:56,520 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-12 18:23:30,750 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-12 18:23:47,923 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-12 18:24:01,120 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-12 18:24:14,138 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-12 18:27:36,218 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-12 18:28:19,711 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-12 18:30:02,688 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-12 18:30:09,721 - handwriting.generator - ERROR - Error during real-time generation: 
+2024-11-12 18:30:09,721 - handwriting.generator - ERROR - Traceback (most recent call last):
+  File "./handwriting/generator.py", line 258, in stream_write
+    self.nn.bias: [bias]
+concurrent.futures._base.CancelledError
+
+2024-11-12 18:30:11,992 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-12 18:34:14,573 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-12 18:34:31,385 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-12 18:37:38,794 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-12 18:38:29,589 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-12 18:38:41,744 - handwriting.generator - ERROR - Error during real-time generation: 
+2024-11-12 18:38:41,745 - handwriting.generator - ERROR - Traceback (most recent call last):
+  File "./handwriting/generator.py", line 258, in stream_write
+    self.nn.bias: [bias]
+concurrent.futures._base.CancelledError
+
+2024-11-12 18:38:53,224 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-12 18:39:06,751 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-12 18:42:38,924 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-12 18:44:19,270 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-12 18:45:31,077 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-12 18:45:47,602 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-12 18:49:32,731 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-12 18:51:45,787 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-12 18:51:59,002 - handwriting.generator - ERROR - Error during real-time generation: 
+2024-11-12 18:51:59,003 - handwriting.generator - ERROR - Traceback (most recent call last):
+  File "./handwriting/generator.py", line 258, in stream_write
+    self.nn.bias: [bias]
+concurrent.futures._base.CancelledError
+
+2024-11-12 18:52:12,491 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-12 18:52:21,490 - handwriting.generator - ERROR - Error during real-time generation: 
+2024-11-12 18:52:21,491 - handwriting.generator - ERROR - Traceback (most recent call last):
+  File "./handwriting/generator.py", line 258, in stream_write
+    self.nn.bias: [bias]
+concurrent.futures._base.CancelledError
+
+2024-11-12 18:52:29,968 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-12 18:53:00,151 - handwriting.generator - ERROR - Error during real-time generation: 
+2024-11-12 18:53:00,151 - handwriting.generator - ERROR - Traceback (most recent call last):
+  File "./handwriting/generator.py", line 258, in stream_write
+    self.nn.bias: [bias]
+concurrent.futures._base.CancelledError
+
+2024-11-12 18:53:01,402 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-12 18:55:18,709 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-12 18:55:40,218 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-12 18:58:47,976 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-12 19:01:07,460 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-12 19:02:51,612 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-12 19:03:09,560 - handwriting.generator - ERROR - Error during real-time generation: 
+2024-11-12 19:03:09,561 - handwriting.generator - ERROR - Traceback (most recent call last):
+  File "./handwriting/generator.py", line 258, in stream_write
+    self.nn.bias: [bias]
+concurrent.futures._base.CancelledError
+
+2024-11-12 19:05:14,000 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-12 19:05:22,588 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-12 19:06:16,605 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-12 19:08:05,580 - app.utils - WARNING - Invalid character(s) ['<', '=', '>', '<', '='] detected in line 1.
+2024-11-12 19:09:00,842 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-12 19:10:14,862 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-12 19:10:44,209 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-12 19:10:54,407 - handwriting.generator - ERROR - Error during real-time generation: 
+2024-11-12 19:10:54,408 - handwriting.generator - ERROR - Traceback (most recent call last):
+  File "./handwriting/generator.py", line 258, in stream_write
+    self.nn.bias: [bias]
+concurrent.futures._base.CancelledError
+
+2024-11-12 19:11:11,340 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-12 19:11:14,680 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-12 19:12:39,023 - uvicorn.error - INFO - Shutting down
+2024-11-12 19:12:39,126 - uvicorn.error - INFO - Waiting for application shutdown.
+2024-11-12 19:12:39,128 - uvicorn.error - INFO - Application shutdown complete.
+2024-11-12 19:12:39,128 - uvicorn.error - INFO - Finished server process [250654]
+2024-11-14 08:31:58,637 - handwriting.generator - INFO - Initializing Handwriting Model...
+2024-11-14 08:31:58,639 - root - INFO - 
+new run with parameters:
+{'attention_mixture_components': 10,
+ 'batch_size': 32,
+ 'batch_sizes': [32, 64, 64],
+ 'beta1_decay': 0.9,
+ 'beta1_decays': [0.9, 0.9, 0.9],
+ 'checkpoint_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/checkpoints',
+ 'early_stopping_steps': 1500,
+ 'enable_parameter_averaging': False,
+ 'grad_clip': 10,
+ 'keep_prob_scalar': 1.0,
+ 'learning_rate': 0.0001,
+ 'learning_rates': [0.0001, 5e-05, 2e-05],
+ 'log_dir': '/home/parthsolanke/dev/Penman/backend/logs',
+ 'log_interval': 20,
+ 'logging_level': 20,
+ 'loss_averaging_window': 100,
+ 'lstm_size': 400,
+ 'min_steps_to_checkpoint': 2000,
+ 'num_restarts': 2,
+ 'num_training_steps': 100000,
+ 'optimizer': 'rms',
+ 'output_mixture_components': 20,
+ 'output_units': 121,
+ 'patiences': [1500, 1000, 500],
+ 'prediction_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/predictions',
+ 'reader': None,
+ 'regularization_constant': 0.0,
+ 'restart_idx': 0,
+ 'validation_batch_size': 32,
+ 'warm_start_init_step': 17900}
+2024-11-14 08:32:03,614 - root - INFO - all parameters:
+2024-11-14 08:32:03,616 - root - INFO - [('Variable:0', []),
+ ('Variable_1:0', []),
+ ('Variable_2:0', []),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp_1:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp_1:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp:0', [30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp_1:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp_1:0', [1600]),
+ ('rnn/gmm/weights/RMSProp:0', [400, 121]),
+ ('rnn/gmm/weights/RMSProp_1:0', [400, 121]),
+ ('rnn/gmm/biases/RMSProp:0', [121]),
+ ('rnn/gmm/biases/RMSProp_1:0', [121])]
+2024-11-14 08:32:03,616 - root - INFO - trainable parameters:
+2024-11-14 08:32:03,617 - root - INFO - [('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121])]
+2024-11-14 08:32:03,617 - root - INFO - trainable parameter count:
+2024-11-14 08:32:03,618 - root - INFO - 3632431
+2024-11-14 08:32:03,678 - root - INFO - built graph
+2024-11-14 08:32:03,682 - root - INFO - restoring model parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-14 08:32:03,682 - tensorflow - INFO - Restoring parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-14 08:33:33,278 - handwriting.generator - INFO - Initializing Handwriting Model...
+2024-11-14 08:33:33,279 - root - INFO - 
+new run with parameters:
+{'attention_mixture_components': 10,
+ 'batch_size': 32,
+ 'batch_sizes': [32, 64, 64],
+ 'beta1_decay': 0.9,
+ 'beta1_decays': [0.9, 0.9, 0.9],
+ 'checkpoint_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/checkpoints',
+ 'early_stopping_steps': 1500,
+ 'enable_parameter_averaging': False,
+ 'grad_clip': 10,
+ 'keep_prob_scalar': 1.0,
+ 'learning_rate': 0.0001,
+ 'learning_rates': [0.0001, 5e-05, 2e-05],
+ 'log_dir': '/home/parthsolanke/dev/Penman/backend/logs',
+ 'log_interval': 20,
+ 'logging_level': 20,
+ 'loss_averaging_window': 100,
+ 'lstm_size': 400,
+ 'min_steps_to_checkpoint': 2000,
+ 'num_restarts': 2,
+ 'num_training_steps': 100000,
+ 'optimizer': 'rms',
+ 'output_mixture_components': 20,
+ 'output_units': 121,
+ 'patiences': [1500, 1000, 500],
+ 'prediction_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/predictions',
+ 'reader': None,
+ 'regularization_constant': 0.0,
+ 'restart_idx': 0,
+ 'validation_batch_size': 32,
+ 'warm_start_init_step': 17900}
+2024-11-14 08:33:38,698 - root - INFO - all parameters:
+2024-11-14 08:33:38,699 - root - INFO - [('Variable:0', []),
+ ('Variable_1:0', []),
+ ('Variable_2:0', []),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp_1:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp_1:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp:0', [30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp_1:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp_1:0', [1600]),
+ ('rnn/gmm/weights/RMSProp:0', [400, 121]),
+ ('rnn/gmm/weights/RMSProp_1:0', [400, 121]),
+ ('rnn/gmm/biases/RMSProp:0', [121]),
+ ('rnn/gmm/biases/RMSProp_1:0', [121])]
+2024-11-14 08:33:38,699 - root - INFO - trainable parameters:
+2024-11-14 08:33:38,700 - root - INFO - [('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121])]
+2024-11-14 08:33:38,700 - root - INFO - trainable parameter count:
+2024-11-14 08:33:38,700 - root - INFO - 3632431
+2024-11-14 08:33:38,741 - root - INFO - built graph
+2024-11-14 08:33:38,744 - root - INFO - restoring model parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-14 08:33:38,744 - tensorflow - INFO - Restoring parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-14 08:33:39,155 - uvicorn.error - INFO - Started server process [407617]
+2024-11-14 08:33:39,157 - uvicorn.error - INFO - Waiting for application startup.
+2024-11-14 08:33:39,158 - uvicorn.error - INFO - Application startup complete.
+2024-11-14 08:33:39,159 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2024-11-14 08:36:07,179 - uvicorn.error - INFO - Shutting down
+2024-11-14 08:36:07,281 - uvicorn.error - INFO - Waiting for application shutdown.
+2024-11-14 08:36:07,281 - uvicorn.error - INFO - Application shutdown complete.
+2024-11-14 08:36:07,282 - uvicorn.error - INFO - Finished server process [407617]
+2024-11-14 08:36:16,744 - handwriting.generator - INFO - Initializing Handwriting Model...
+2024-11-14 08:36:16,746 - root - INFO - 
+new run with parameters:
+{'attention_mixture_components': 10,
+ 'batch_size': 32,
+ 'batch_sizes': [32, 64, 64],
+ 'beta1_decay': 0.9,
+ 'beta1_decays': [0.9, 0.9, 0.9],
+ 'checkpoint_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/checkpoints',
+ 'early_stopping_steps': 1500,
+ 'enable_parameter_averaging': False,
+ 'grad_clip': 10,
+ 'keep_prob_scalar': 1.0,
+ 'learning_rate': 0.0001,
+ 'learning_rates': [0.0001, 5e-05, 2e-05],
+ 'log_dir': '/home/parthsolanke/dev/Penman/backend/logs',
+ 'log_interval': 20,
+ 'logging_level': 20,
+ 'loss_averaging_window': 100,
+ 'lstm_size': 400,
+ 'min_steps_to_checkpoint': 2000,
+ 'num_restarts': 2,
+ 'num_training_steps': 100000,
+ 'optimizer': 'rms',
+ 'output_mixture_components': 20,
+ 'output_units': 121,
+ 'patiences': [1500, 1000, 500],
+ 'prediction_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/predictions',
+ 'reader': None,
+ 'regularization_constant': 0.0,
+ 'restart_idx': 0,
+ 'validation_batch_size': 32,
+ 'warm_start_init_step': 17900}
+2024-11-14 08:36:22,491 - root - INFO - all parameters:
+2024-11-14 08:36:22,492 - root - INFO - [('Variable:0', []),
+ ('Variable_1:0', []),
+ ('Variable_2:0', []),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp_1:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp_1:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp:0', [30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp_1:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp_1:0', [1600]),
+ ('rnn/gmm/weights/RMSProp:0', [400, 121]),
+ ('rnn/gmm/weights/RMSProp_1:0', [400, 121]),
+ ('rnn/gmm/biases/RMSProp:0', [121]),
+ ('rnn/gmm/biases/RMSProp_1:0', [121])]
+2024-11-14 08:36:22,493 - root - INFO - trainable parameters:
+2024-11-14 08:36:22,493 - root - INFO - [('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121])]
+2024-11-14 08:36:22,494 - root - INFO - trainable parameter count:
+2024-11-14 08:36:22,494 - root - INFO - 3632431
+2024-11-14 08:36:22,565 - root - INFO - built graph
+2024-11-14 08:36:22,569 - root - INFO - restoring model parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-14 08:36:22,570 - tensorflow - INFO - Restoring parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-14 08:36:22,996 - uvicorn.error - INFO - Started server process [408226]
+2024-11-14 08:36:22,998 - uvicorn.error - INFO - Waiting for application startup.
+2024-11-14 08:36:22,998 - uvicorn.error - INFO - Application startup complete.
+2024-11-14 08:36:22,999 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2024-11-14 08:37:07,772 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-14 08:38:07,105 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-14 08:39:57,679 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-14 08:40:10,060 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-14 08:40:26,822 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-14 08:40:50,958 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-14 08:41:38,742 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-14 08:49:21,272 - uvicorn.error - INFO - Shutting down
+2024-11-14 08:49:21,375 - uvicorn.error - INFO - Waiting for application shutdown.
+2024-11-14 08:49:21,376 - uvicorn.error - INFO - Application shutdown complete.
+2024-11-14 08:49:21,376 - uvicorn.error - INFO - Finished server process [408226]
+2024-11-14 08:49:28,396 - handwriting.generator - INFO - Initializing Handwriting Model...
+2024-11-14 08:49:28,396 - root - INFO - 
+new run with parameters:
+{'attention_mixture_components': 10,
+ 'batch_size': 32,
+ 'batch_sizes': [32, 64, 64],
+ 'beta1_decay': 0.9,
+ 'beta1_decays': [0.9, 0.9, 0.9],
+ 'checkpoint_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/checkpoints',
+ 'early_stopping_steps': 1500,
+ 'enable_parameter_averaging': False,
+ 'grad_clip': 10,
+ 'keep_prob_scalar': 1.0,
+ 'learning_rate': 0.0001,
+ 'learning_rates': [0.0001, 5e-05, 2e-05],
+ 'log_dir': '/home/parthsolanke/dev/Penman/backend/logs',
+ 'log_interval': 20,
+ 'logging_level': 20,
+ 'loss_averaging_window': 100,
+ 'lstm_size': 400,
+ 'min_steps_to_checkpoint': 2000,
+ 'num_restarts': 2,
+ 'num_training_steps': 100000,
+ 'optimizer': 'rms',
+ 'output_mixture_components': 20,
+ 'output_units': 121,
+ 'patiences': [1500, 1000, 500],
+ 'prediction_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/predictions',
+ 'reader': None,
+ 'regularization_constant': 0.0,
+ 'restart_idx': 0,
+ 'validation_batch_size': 32,
+ 'warm_start_init_step': 17900}
+2024-11-14 08:49:30,810 - root - INFO - all parameters:
+2024-11-14 08:49:30,811 - root - INFO - [('Variable:0', []),
+ ('Variable_1:0', []),
+ ('Variable_2:0', []),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp_1:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp_1:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp:0', [30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp_1:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp_1:0', [1600]),
+ ('rnn/gmm/weights/RMSProp:0', [400, 121]),
+ ('rnn/gmm/weights/RMSProp_1:0', [400, 121]),
+ ('rnn/gmm/biases/RMSProp:0', [121]),
+ ('rnn/gmm/biases/RMSProp_1:0', [121])]
+2024-11-14 08:49:30,811 - root - INFO - trainable parameters:
+2024-11-14 08:49:30,811 - root - INFO - [('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121])]
+2024-11-14 08:49:30,811 - root - INFO - trainable parameter count:
+2024-11-14 08:49:30,812 - root - INFO - 3632431
+2024-11-14 08:49:30,835 - root - INFO - built graph
+2024-11-14 08:49:30,838 - root - INFO - restoring model parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-14 08:49:30,838 - tensorflow - INFO - Restoring parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-14 08:49:31,099 - uvicorn.error - INFO - Started server process [410664]
+2024-11-14 08:49:31,100 - uvicorn.error - INFO - Waiting for application startup.
+2024-11-14 08:49:31,100 - uvicorn.error - INFO - Application startup complete.
+2024-11-14 08:49:31,101 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2024-11-14 08:50:07,471 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-14 08:50:25,688 - handwriting.generator - ERROR - Error during real-time generation: 
+2024-11-14 08:50:25,688 - handwriting.generator - ERROR - Traceback (most recent call last):
+  File "./handwriting/generator.py", line 260, in stream_write
+    self.nn.bias: [bias]
+concurrent.futures._base.CancelledError
+
+2024-11-14 08:50:32,642 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-14 08:53:54,568 - uvicorn.error - INFO - Shutting down
+2024-11-14 08:53:54,670 - uvicorn.error - INFO - Waiting for application shutdown.
+2024-11-14 08:53:54,670 - uvicorn.error - INFO - Application shutdown complete.
+2024-11-14 08:53:54,670 - uvicorn.error - INFO - Finished server process [410664]
+2024-11-14 08:54:02,754 - handwriting.generator - INFO - Initializing Handwriting Model...
+2024-11-14 08:54:02,754 - root - INFO - 
+new run with parameters:
+{'attention_mixture_components': 10,
+ 'batch_size': 32,
+ 'batch_sizes': [32, 64, 64],
+ 'beta1_decay': 0.9,
+ 'beta1_decays': [0.9, 0.9, 0.9],
+ 'checkpoint_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/checkpoints',
+ 'early_stopping_steps': 1500,
+ 'enable_parameter_averaging': False,
+ 'grad_clip': 10,
+ 'keep_prob_scalar': 1.0,
+ 'learning_rate': 0.0001,
+ 'learning_rates': [0.0001, 5e-05, 2e-05],
+ 'log_dir': '/home/parthsolanke/dev/Penman/backend/logs',
+ 'log_interval': 20,
+ 'logging_level': 20,
+ 'loss_averaging_window': 100,
+ 'lstm_size': 400,
+ 'min_steps_to_checkpoint': 2000,
+ 'num_restarts': 2,
+ 'num_training_steps': 100000,
+ 'optimizer': 'rms',
+ 'output_mixture_components': 20,
+ 'output_units': 121,
+ 'patiences': [1500, 1000, 500],
+ 'prediction_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/predictions',
+ 'reader': None,
+ 'regularization_constant': 0.0,
+ 'restart_idx': 0,
+ 'validation_batch_size': 32,
+ 'warm_start_init_step': 17900}
+2024-11-14 08:54:05,030 - root - INFO - all parameters:
+2024-11-14 08:54:05,031 - root - INFO - [('Variable:0', []),
+ ('Variable_1:0', []),
+ ('Variable_2:0', []),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp_1:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp_1:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp:0', [30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp_1:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp_1:0', [1600]),
+ ('rnn/gmm/weights/RMSProp:0', [400, 121]),
+ ('rnn/gmm/weights/RMSProp_1:0', [400, 121]),
+ ('rnn/gmm/biases/RMSProp:0', [121]),
+ ('rnn/gmm/biases/RMSProp_1:0', [121])]
+2024-11-14 08:54:05,031 - root - INFO - trainable parameters:
+2024-11-14 08:54:05,031 - root - INFO - [('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121])]
+2024-11-14 08:54:05,031 - root - INFO - trainable parameter count:
+2024-11-14 08:54:05,032 - root - INFO - 3632431
+2024-11-14 08:54:05,052 - root - INFO - built graph
+2024-11-14 08:54:05,054 - root - INFO - restoring model parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-14 08:54:05,054 - tensorflow - INFO - Restoring parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-14 08:54:05,292 - uvicorn.error - INFO - Started server process [411668]
+2024-11-14 08:54:05,293 - uvicorn.error - INFO - Waiting for application startup.
+2024-11-14 08:54:05,293 - uvicorn.error - INFO - Application startup complete.
+2024-11-14 08:54:05,293 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2024-11-14 08:54:26,718 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-14 08:55:12,136 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-14 08:55:40,884 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-14 08:55:53,064 - handwriting.generator - ERROR - Error during real-time generation: 
+2024-11-14 08:55:53,064 - handwriting.generator - ERROR - Traceback (most recent call last):
+  File "./handwriting/generator.py", line 260, in stream_write
+    self.nn.bias: [bias]
+concurrent.futures._base.CancelledError
+
+2024-11-14 08:56:00,405 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-14 08:57:51,560 - uvicorn.error - INFO - Shutting down
+2024-11-14 08:57:51,661 - uvicorn.error - INFO - Waiting for application shutdown.
+2024-11-14 08:57:51,661 - uvicorn.error - INFO - Application shutdown complete.
+2024-11-14 08:57:51,662 - uvicorn.error - INFO - Finished server process [411668]
+2024-11-15 13:45:12,370 - handwriting.generator - INFO - Initializing Handwriting Model...
+2024-11-15 13:45:12,372 - root - INFO - 
+new run with parameters:
+{'attention_mixture_components': 10,
+ 'batch_size': 32,
+ 'batch_sizes': [32, 64, 64],
+ 'beta1_decay': 0.9,
+ 'beta1_decays': [0.9, 0.9, 0.9],
+ 'checkpoint_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/checkpoints',
+ 'early_stopping_steps': 1500,
+ 'enable_parameter_averaging': False,
+ 'grad_clip': 10,
+ 'keep_prob_scalar': 1.0,
+ 'learning_rate': 0.0001,
+ 'learning_rates': [0.0001, 5e-05, 2e-05],
+ 'log_dir': '/home/parthsolanke/dev/Penman/backend/logs',
+ 'log_interval': 20,
+ 'logging_level': 20,
+ 'loss_averaging_window': 100,
+ 'lstm_size': 400,
+ 'min_steps_to_checkpoint': 2000,
+ 'num_restarts': 2,
+ 'num_training_steps': 100000,
+ 'optimizer': 'rms',
+ 'output_mixture_components': 20,
+ 'output_units': 121,
+ 'patiences': [1500, 1000, 500],
+ 'prediction_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/predictions',
+ 'reader': None,
+ 'regularization_constant': 0.0,
+ 'restart_idx': 0,
+ 'validation_batch_size': 32,
+ 'warm_start_init_step': 17900}
+2024-11-15 13:45:16,568 - root - INFO - all parameters:
+2024-11-15 13:45:16,569 - root - INFO - [('Variable:0', []),
+ ('Variable_1:0', []),
+ ('Variable_2:0', []),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp_1:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp_1:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp:0', [30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp_1:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp_1:0', [1600]),
+ ('rnn/gmm/weights/RMSProp:0', [400, 121]),
+ ('rnn/gmm/weights/RMSProp_1:0', [400, 121]),
+ ('rnn/gmm/biases/RMSProp:0', [121]),
+ ('rnn/gmm/biases/RMSProp_1:0', [121])]
+2024-11-15 13:45:16,570 - root - INFO - trainable parameters:
+2024-11-15 13:45:16,570 - root - INFO - [('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121])]
+2024-11-15 13:45:16,570 - root - INFO - trainable parameter count:
+2024-11-15 13:45:16,570 - root - INFO - 3632431
+2024-11-15 13:45:16,640 - root - INFO - built graph
+2024-11-15 13:45:16,645 - root - INFO - restoring model parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-15 13:45:16,645 - tensorflow - INFO - Restoring parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-15 13:45:17,071 - uvicorn.error - INFO - Started server process [2269]
+2024-11-15 13:45:17,072 - uvicorn.error - INFO - Waiting for application startup.
+2024-11-15 13:45:17,072 - uvicorn.error - INFO - Application startup complete.
+2024-11-15 13:45:17,073 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2024-11-15 13:46:12,756 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-15 13:47:25,938 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-15 13:47:32,959 - handwriting.generator - ERROR - Error during real-time generation: 
+2024-11-15 13:47:32,960 - handwriting.generator - ERROR - Traceback (most recent call last):
+  File "./handwriting/generator.py", line 260, in stream_write
+    self.nn.bias: [bias]
+concurrent.futures._base.CancelledError
+
+2024-11-15 13:48:15,685 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-15 13:48:54,823 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-15 13:51:06,684 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-15 13:51:09,316 - handwriting.generator - ERROR - Error during real-time generation: 
+2024-11-15 13:51:09,316 - handwriting.generator - ERROR - Traceback (most recent call last):
+  File "./handwriting/generator.py", line 260, in stream_write
+    self.nn.bias: [bias]
+concurrent.futures._base.CancelledError
+
+2024-11-15 13:51:11,195 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-15 13:51:17,127 - handwriting.generator - ERROR - Error during real-time generation: 
+2024-11-15 13:51:17,127 - handwriting.generator - ERROR - Traceback (most recent call last):
+  File "./handwriting/generator.py", line 260, in stream_write
+    self.nn.bias: [bias]
+concurrent.futures._base.CancelledError
+
+2024-11-15 13:53:27,961 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-15 13:53:36,601 - handwriting.generator - ERROR - Error during real-time generation: 
+2024-11-15 13:53:36,602 - handwriting.generator - ERROR - Traceback (most recent call last):
+  File "./handwriting/generator.py", line 260, in stream_write
+    self.nn.bias: [bias]
+concurrent.futures._base.CancelledError
+
+2024-11-15 13:53:42,891 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-15 13:53:51,804 - handwriting.generator - ERROR - Error during real-time generation: 
+2024-11-15 13:53:51,804 - handwriting.generator - ERROR - Traceback (most recent call last):
+  File "./handwriting/generator.py", line 260, in stream_write
+    self.nn.bias: [bias]
+concurrent.futures._base.CancelledError
+
+2024-11-15 13:54:24,419 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-15 13:54:30,724 - handwriting.generator - ERROR - Error during real-time generation: 
+2024-11-15 13:54:30,724 - handwriting.generator - ERROR - Traceback (most recent call last):
+  File "./handwriting/generator.py", line 260, in stream_write
+    self.nn.bias: [bias]
+concurrent.futures._base.CancelledError
+
+2024-11-15 13:55:30,431 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-15 13:55:37,054 - handwriting.generator - ERROR - Error during real-time generation: 
+2024-11-15 13:55:37,055 - handwriting.generator - ERROR - Traceback (most recent call last):
+  File "./handwriting/generator.py", line 260, in stream_write
+    self.nn.bias: [bias]
+concurrent.futures._base.CancelledError
+
+2024-11-15 13:57:42,316 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-15 13:57:49,003 - handwriting.generator - ERROR - Error during real-time generation: 
+2024-11-15 13:57:49,004 - handwriting.generator - ERROR - Traceback (most recent call last):
+  File "./handwriting/generator.py", line 260, in stream_write
+    self.nn.bias: [bias]
+concurrent.futures._base.CancelledError
+
+2024-11-15 13:58:19,590 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-15 13:58:53,948 - uvicorn.error - INFO - Shutting down
+2024-11-15 13:58:54,053 - uvicorn.error - INFO - Waiting for application shutdown.
+2024-11-15 13:58:54,054 - uvicorn.error - INFO - Application shutdown complete.
+2024-11-15 13:58:54,054 - uvicorn.error - INFO - Finished server process [2269]
+2024-11-17 17:48:47,239 - handwriting.generator - INFO - Initializing Handwriting Model...
+2024-11-17 17:48:47,241 - root - INFO - 
+new run with parameters:
+{'attention_mixture_components': 10,
+ 'batch_size': 32,
+ 'batch_sizes': [32, 64, 64],
+ 'beta1_decay': 0.9,
+ 'beta1_decays': [0.9, 0.9, 0.9],
+ 'checkpoint_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/checkpoints',
+ 'early_stopping_steps': 1500,
+ 'enable_parameter_averaging': False,
+ 'grad_clip': 10,
+ 'keep_prob_scalar': 1.0,
+ 'learning_rate': 0.0001,
+ 'learning_rates': [0.0001, 5e-05, 2e-05],
+ 'log_dir': '/home/parthsolanke/dev/Penman/backend/logs',
+ 'log_interval': 20,
+ 'logging_level': 20,
+ 'loss_averaging_window': 100,
+ 'lstm_size': 400,
+ 'min_steps_to_checkpoint': 2000,
+ 'num_restarts': 2,
+ 'num_training_steps': 100000,
+ 'optimizer': 'rms',
+ 'output_mixture_components': 20,
+ 'output_units': 121,
+ 'patiences': [1500, 1000, 500],
+ 'prediction_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/predictions',
+ 'reader': None,
+ 'regularization_constant': 0.0,
+ 'restart_idx': 0,
+ 'validation_batch_size': 32,
+ 'warm_start_init_step': 17900}
+2024-11-17 17:48:51,320 - root - INFO - all parameters:
+2024-11-17 17:48:51,321 - root - INFO - [('Variable:0', []),
+ ('Variable_1:0', []),
+ ('Variable_2:0', []),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp_1:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp_1:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp:0', [30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp_1:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp_1:0', [1600]),
+ ('rnn/gmm/weights/RMSProp:0', [400, 121]),
+ ('rnn/gmm/weights/RMSProp_1:0', [400, 121]),
+ ('rnn/gmm/biases/RMSProp:0', [121]),
+ ('rnn/gmm/biases/RMSProp_1:0', [121])]
+2024-11-17 17:48:51,321 - root - INFO - trainable parameters:
+2024-11-17 17:48:51,321 - root - INFO - [('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121])]
+2024-11-17 17:48:51,322 - root - INFO - trainable parameter count:
+2024-11-17 17:48:51,322 - root - INFO - 3632431
+2024-11-17 17:48:51,374 - root - INFO - built graph
+2024-11-17 17:48:51,377 - root - INFO - restoring model parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-17 17:48:51,377 - tensorflow - INFO - Restoring parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-17 17:48:51,775 - uvicorn.error - INFO - Started server process [3304]
+2024-11-17 17:48:51,776 - uvicorn.error - INFO - Waiting for application startup.
+2024-11-17 17:48:51,777 - uvicorn.error - INFO - Application startup complete.
+2024-11-17 17:48:51,777 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2024-11-17 17:49:48,650 - app.routes - INFO - /generate-stream endpoint took 0.00029850006103515625 seconds
+2024-11-17 17:49:48,691 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-17 17:49:48,692 - handwriting.generator - INFO - _validate_input method took 1.0728836059570312e-05 seconds
+2024-11-17 17:49:49,957 - handwriting.generator - INFO - stream_write method took 1.265869379043579 seconds
+2024-11-17 17:50:07,516 - app.routes - INFO - /generate-stream endpoint took 0.00018596649169921875 seconds
+2024-11-17 17:50:07,518 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-17 17:50:07,518 - handwriting.generator - INFO - _validate_input method took 3.1948089599609375e-05 seconds
+2024-11-17 17:50:33,046 - handwriting.generator - INFO - stream_write method took 25.52858257293701 seconds
+2024-11-17 17:50:51,854 - app.routes - INFO - /generate-stream endpoint took 0.00014519691467285156 seconds
+2024-11-17 17:50:51,856 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-17 17:50:51,856 - handwriting.generator - INFO - _validate_input method took 3.4332275390625e-05 seconds
+2024-11-17 17:51:05,637 - handwriting.generator - ERROR - Error during real-time generation: 
+2024-11-17 17:51:05,638 - handwriting.generator - ERROR - Traceback (most recent call last):
+  File "./handwriting/generator.py", line 274, in stream_write
+    self.nn.bias: [bias]
+concurrent.futures._base.CancelledError
+
+2024-11-17 17:51:05,638 - handwriting.generator - INFO - stream_write method took 13.782853603363037 seconds
+2024-11-17 17:51:54,467 - app.routes - INFO - /generate-stream endpoint took 0.000141143798828125 seconds
+2024-11-17 17:51:54,468 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-17 17:51:54,469 - handwriting.generator - INFO - _validate_input method took 3.0279159545898438e-05 seconds
+2024-11-17 17:52:21,532 - handwriting.generator - INFO - stream_write method took 27.063990831375122 seconds
+2024-11-17 17:52:32,343 - uvicorn.error - INFO - Shutting down
+2024-11-17 17:52:32,446 - uvicorn.error - INFO - Waiting for application shutdown.
+2024-11-17 17:52:32,447 - uvicorn.error - INFO - Application shutdown complete.
+2024-11-17 17:52:32,447 - uvicorn.error - INFO - Finished server process [3304]
+2024-11-17 17:52:56,337 - handwriting.generator - INFO - Initializing Handwriting Model...
+2024-11-17 17:52:56,337 - root - INFO - 
+new run with parameters:
+{'attention_mixture_components': 10,
+ 'batch_size': 32,
+ 'batch_sizes': [32, 64, 64],
+ 'beta1_decay': 0.9,
+ 'beta1_decays': [0.9, 0.9, 0.9],
+ 'checkpoint_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/checkpoints',
+ 'early_stopping_steps': 1500,
+ 'enable_parameter_averaging': False,
+ 'grad_clip': 10,
+ 'keep_prob_scalar': 1.0,
+ 'learning_rate': 0.0001,
+ 'learning_rates': [0.0001, 5e-05, 2e-05],
+ 'log_dir': '/home/parthsolanke/dev/Penman/backend/logs',
+ 'log_interval': 20,
+ 'logging_level': 20,
+ 'loss_averaging_window': 100,
+ 'lstm_size': 400,
+ 'min_steps_to_checkpoint': 2000,
+ 'num_restarts': 2,
+ 'num_training_steps': 100000,
+ 'optimizer': 'rms',
+ 'output_mixture_components': 20,
+ 'output_units': 121,
+ 'patiences': [1500, 1000, 500],
+ 'prediction_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/predictions',
+ 'reader': None,
+ 'regularization_constant': 0.0,
+ 'restart_idx': 0,
+ 'validation_batch_size': 32,
+ 'warm_start_init_step': 17900}
+2024-11-17 17:53:00,527 - root - INFO - all parameters:
+2024-11-17 17:53:00,529 - root - INFO - [('Variable:0', []),
+ ('Variable_1:0', []),
+ ('Variable_2:0', []),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp_1:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp_1:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp:0', [30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp_1:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp_1:0', [1600]),
+ ('rnn/gmm/weights/RMSProp:0', [400, 121]),
+ ('rnn/gmm/weights/RMSProp_1:0', [400, 121]),
+ ('rnn/gmm/biases/RMSProp:0', [121]),
+ ('rnn/gmm/biases/RMSProp_1:0', [121])]
+2024-11-17 17:53:00,529 - root - INFO - trainable parameters:
+2024-11-17 17:53:00,529 - root - INFO - [('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121])]
+2024-11-17 17:53:00,529 - root - INFO - trainable parameter count:
+2024-11-17 17:53:00,530 - root - INFO - 3632431
+2024-11-17 17:53:00,565 - root - INFO - built graph
+2024-11-17 17:53:00,567 - root - INFO - restoring model parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-17 17:53:00,567 - tensorflow - INFO - Restoring parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-17 17:53:00,905 - uvicorn.error - INFO - Started server process [4846]
+2024-11-17 17:53:00,907 - uvicorn.error - INFO - Waiting for application startup.
+2024-11-17 17:53:00,907 - uvicorn.error - INFO - Application startup complete.
+2024-11-17 17:53:00,908 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2024-11-17 17:56:39,386 - uvicorn.error - INFO - Shutting down
+2024-11-17 17:56:39,489 - uvicorn.error - INFO - Waiting for application shutdown.
+2024-11-17 17:56:39,490 - uvicorn.error - INFO - Application shutdown complete.
+2024-11-17 17:56:39,490 - uvicorn.error - INFO - Finished server process [4846]
+2024-11-17 17:56:49,305 - handwriting.generator - INFO - Initializing Handwriting Model...
+2024-11-17 17:56:49,306 - root - INFO - 
+new run with parameters:
+{'attention_mixture_components': 10,
+ 'batch_size': 32,
+ 'batch_sizes': [32, 64, 64],
+ 'beta1_decay': 0.9,
+ 'beta1_decays': [0.9, 0.9, 0.9],
+ 'checkpoint_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/checkpoints',
+ 'early_stopping_steps': 1500,
+ 'enable_parameter_averaging': False,
+ 'grad_clip': 10,
+ 'keep_prob_scalar': 1.0,
+ 'learning_rate': 0.0001,
+ 'learning_rates': [0.0001, 5e-05, 2e-05],
+ 'log_dir': '/home/parthsolanke/dev/Penman/backend/logs',
+ 'log_interval': 20,
+ 'logging_level': 20,
+ 'loss_averaging_window': 100,
+ 'lstm_size': 400,
+ 'min_steps_to_checkpoint': 2000,
+ 'num_restarts': 2,
+ 'num_training_steps': 100000,
+ 'optimizer': 'rms',
+ 'output_mixture_components': 20,
+ 'output_units': 121,
+ 'patiences': [1500, 1000, 500],
+ 'prediction_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/predictions',
+ 'reader': None,
+ 'regularization_constant': 0.0,
+ 'restart_idx': 0,
+ 'validation_batch_size': 32,
+ 'warm_start_init_step': 17900}
+2024-11-17 17:56:53,492 - root - INFO - all parameters:
+2024-11-17 17:56:53,493 - root - INFO - [('Variable:0', []),
+ ('Variable_1:0', []),
+ ('Variable_2:0', []),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp_1:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp_1:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp:0', [30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp_1:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp_1:0', [1600]),
+ ('rnn/gmm/weights/RMSProp:0', [400, 121]),
+ ('rnn/gmm/weights/RMSProp_1:0', [400, 121]),
+ ('rnn/gmm/biases/RMSProp:0', [121]),
+ ('rnn/gmm/biases/RMSProp_1:0', [121])]
+2024-11-17 17:56:53,493 - root - INFO - trainable parameters:
+2024-11-17 17:56:53,494 - root - INFO - [('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121])]
+2024-11-17 17:56:53,494 - root - INFO - trainable parameter count:
+2024-11-17 17:56:53,495 - root - INFO - 3632431
+2024-11-17 17:56:53,531 - root - INFO - built graph
+2024-11-17 17:56:53,533 - root - INFO - restoring model parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-17 17:56:53,533 - tensorflow - INFO - Restoring parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-17 17:56:53,849 - uvicorn.error - INFO - Started server process [5747]
+2024-11-17 17:56:53,851 - uvicorn.error - INFO - Waiting for application startup.
+2024-11-17 17:56:53,851 - uvicorn.error - INFO - Application startup complete.
+2024-11-17 17:56:53,852 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2024-11-17 17:57:10,989 - app.routes - INFO - /generate-stream endpoint took 0.00043320655822753906 seconds
+2024-11-17 17:57:11,013 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-17 17:57:11,943 - handwriting.generator - ERROR - Error during real-time generation: You must feed a value for placeholder tensor 'Placeholder_8' with dtype float and shape [?,?,3]
+	 [[Node: Placeholder_8 = Placeholder[dtype=DT_FLOAT, shape=[?,?,3], _device="/job:localhost/replica:0/task:0/device:CPU:0"]()]]
+
+Caused by op 'Placeholder_8', defined at:
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/bin/uvicorn", line 8, in <module>
+    sys.exit(main())
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/click/core.py", line 1128, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/click/core.py", line 1053, in main
+    rv = self.invoke(ctx)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/click/core.py", line 1395, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/click/core.py", line 754, in invoke
+    return __callback(*args, **kwargs)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/uvicorn/main.py", line 426, in main
+    run(app, **kwargs)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/uvicorn/main.py", line 452, in run
+    server.run()
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/uvicorn/server.py", line 69, in run
+    return asyncio.get_event_loop().run_until_complete(self.serve(sockets=sockets))
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/asyncio/base_events.py", line 475, in run_until_complete
+    self.run_forever()
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/asyncio/base_events.py", line 442, in run_forever
+    self._run_once()
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/asyncio/base_events.py", line 1462, in _run_once
+    handle._run()
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/asyncio/events.py", line 145, in _run
+    self._callback(*self._args)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/uvicorn/server.py", line 76, in serve
+    config.load()
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/uvicorn/config.py", line 456, in load
+    self.loaded_app = import_from_string(self.app)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/uvicorn/importer.py", line 21, in import_from_string
+    module = importlib.import_module(module_str)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "./main.py", line 4, in <module>
+    from app.routes import router as handwriting_router
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "./app/routes.py", line 15, in <module>
+    hand = Hand()
+  File "./handwriting/generator.py", line 35, in __init__
+    **MODEL_CONFIG
+  File "./handwriting/models/rnn.py", line 85, in __init__
+    super(rnn, self).__init__(**kwargs)
+  File "./handwriting/models/tf_base_model.py", line 108, in __init__
+    self.graph = self.build_graph()
+  File "./handwriting/models/tf_base_model.py", line 399, in build_graph
+    self.loss = self.calculate_loss()
+  File "./handwriting/models/rnn.py", line 175, in calculate_loss
+    self.x_prime = tf.placeholder(tf.float32, [None, None, 3])
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/tensorflow/python/ops/array_ops.py", line 1746, in placeholder
+    return gen_array_ops._placeholder(dtype=dtype, shape=shape, name=name)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/tensorflow/python/ops/gen_array_ops.py", line 3051, in _placeholder
+    "Placeholder", dtype=dtype, shape=shape, name=name)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py", line 787, in _apply_op_helper
+    op_def=op_def)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/tensorflow/python/framework/ops.py", line 3271, in create_op
+    op_def=op_def)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/tensorflow/python/framework/ops.py", line 1650, in __init__
+    self._traceback = self._graph._extract_stack()  # pylint: disable=protected-access
+
+InvalidArgumentError (see above for traceback): You must feed a value for placeholder tensor 'Placeholder_8' with dtype float and shape [?,?,3]
+	 [[Node: Placeholder_8 = Placeholder[dtype=DT_FLOAT, shape=[?,?,3], _device="/job:localhost/replica:0/task:0/device:CPU:0"]()]]
+
+2024-11-17 17:57:11,950 - handwriting.generator - ERROR - Traceback (most recent call last):
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1361, in _do_call
+    return fn(*args)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1340, in _run_fn
+    target_list, status, run_metadata)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/tensorflow/python/framework/errors_impl.py", line 516, in __exit__
+    c_api.TF_GetCode(self.status.status))
+tensorflow.python.framework.errors_impl.InvalidArgumentError: You must feed a value for placeholder tensor 'Placeholder_8' with dtype float and shape [?,?,3]
+	 [[Node: Placeholder_8 = Placeholder[dtype=DT_FLOAT, shape=[?,?,3], _device="/job:localhost/replica:0/task:0/device:CPU:0"]()]]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./handwriting/generator.py", line 281, in stream_write
+    timeout=10.0
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/asyncio/tasks.py", line 358, in wait_for
+    return fut.result()
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/concurrent/futures/thread.py", line 56, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "./handwriting/generator.py", line 320, in _generate_batch_samples
+    self.nn.bias: batch_biases
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 905, in run
+    run_metadata_ptr)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1137, in _run
+    feed_dict_tensor, options, run_metadata)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1355, in _do_run
+    options, run_metadata)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1374, in _do_call
+    raise type(e)(node_def, op, message)
+tensorflow.python.framework.errors_impl.InvalidArgumentError: You must feed a value for placeholder tensor 'Placeholder_8' with dtype float and shape [?,?,3]
+	 [[Node: Placeholder_8 = Placeholder[dtype=DT_FLOAT, shape=[?,?,3], _device="/job:localhost/replica:0/task:0/device:CPU:0"]()]]
+
+Caused by op 'Placeholder_8', defined at:
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/bin/uvicorn", line 8, in <module>
+    sys.exit(main())
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/click/core.py", line 1128, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/click/core.py", line 1053, in main
+    rv = self.invoke(ctx)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/click/core.py", line 1395, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/click/core.py", line 754, in invoke
+    return __callback(*args, **kwargs)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/uvicorn/main.py", line 426, in main
+    run(app, **kwargs)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/uvicorn/main.py", line 452, in run
+    server.run()
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/uvicorn/server.py", line 69, in run
+    return asyncio.get_event_loop().run_until_complete(self.serve(sockets=sockets))
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/asyncio/base_events.py", line 475, in run_until_complete
+    self.run_forever()
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/asyncio/base_events.py", line 442, in run_forever
+    self._run_once()
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/asyncio/base_events.py", line 1462, in _run_once
+    handle._run()
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/asyncio/events.py", line 145, in _run
+    self._callback(*self._args)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/uvicorn/server.py", line 76, in serve
+    config.load()
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/uvicorn/config.py", line 456, in load
+    self.loaded_app = import_from_string(self.app)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/uvicorn/importer.py", line 21, in import_from_string
+    module = importlib.import_module(module_str)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "./main.py", line 4, in <module>
+    from app.routes import router as handwriting_router
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "./app/routes.py", line 15, in <module>
+    hand = Hand()
+  File "./handwriting/generator.py", line 35, in __init__
+    **MODEL_CONFIG
+  File "./handwriting/models/rnn.py", line 85, in __init__
+    super(rnn, self).__init__(**kwargs)
+  File "./handwriting/models/tf_base_model.py", line 108, in __init__
+    self.graph = self.build_graph()
+  File "./handwriting/models/tf_base_model.py", line 399, in build_graph
+    self.loss = self.calculate_loss()
+  File "./handwriting/models/rnn.py", line 175, in calculate_loss
+    self.x_prime = tf.placeholder(tf.float32, [None, None, 3])
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/tensorflow/python/ops/array_ops.py", line 1746, in placeholder
+    return gen_array_ops._placeholder(dtype=dtype, shape=shape, name=name)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/tensorflow/python/ops/gen_array_ops.py", line 3051, in _placeholder
+    "Placeholder", dtype=dtype, shape=shape, name=name)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py", line 787, in _apply_op_helper
+    op_def=op_def)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/tensorflow/python/framework/ops.py", line 3271, in create_op
+    op_def=op_def)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/tensorflow/python/framework/ops.py", line 1650, in __init__
+    self._traceback = self._graph._extract_stack()  # pylint: disable=protected-access
+
+InvalidArgumentError (see above for traceback): You must feed a value for placeholder tensor 'Placeholder_8' with dtype float and shape [?,?,3]
+	 [[Node: Placeholder_8 = Placeholder[dtype=DT_FLOAT, shape=[?,?,3], _device="/job:localhost/replica:0/task:0/device:CPU:0"]()]]
+
+
+2024-11-17 17:58:54,605 - uvicorn.error - INFO - Shutting down
+2024-11-17 17:58:54,709 - uvicorn.error - INFO - Waiting for application shutdown.
+2024-11-17 17:58:54,711 - uvicorn.error - INFO - Application shutdown complete.
+2024-11-17 17:58:54,711 - uvicorn.error - INFO - Finished server process [5747]
+2024-11-17 17:59:19,967 - handwriting.generator - INFO - Initializing Handwriting Model...
+2024-11-17 17:59:19,968 - root - INFO - 
+new run with parameters:
+{'attention_mixture_components': 10,
+ 'batch_size': 32,
+ 'batch_sizes': [32, 64, 64],
+ 'beta1_decay': 0.9,
+ 'beta1_decays': [0.9, 0.9, 0.9],
+ 'checkpoint_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/checkpoints',
+ 'early_stopping_steps': 1500,
+ 'enable_parameter_averaging': False,
+ 'grad_clip': 10,
+ 'keep_prob_scalar': 1.0,
+ 'learning_rate': 0.0001,
+ 'learning_rates': [0.0001, 5e-05, 2e-05],
+ 'log_dir': '/home/parthsolanke/dev/Penman/backend/logs',
+ 'log_interval': 20,
+ 'logging_level': 20,
+ 'loss_averaging_window': 100,
+ 'lstm_size': 400,
+ 'min_steps_to_checkpoint': 2000,
+ 'num_restarts': 2,
+ 'num_training_steps': 100000,
+ 'optimizer': 'rms',
+ 'output_mixture_components': 20,
+ 'output_units': 121,
+ 'patiences': [1500, 1000, 500],
+ 'prediction_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/predictions',
+ 'reader': None,
+ 'regularization_constant': 0.0,
+ 'restart_idx': 0,
+ 'validation_batch_size': 32,
+ 'warm_start_init_step': 17900}
+2024-11-17 17:59:24,157 - root - INFO - all parameters:
+2024-11-17 17:59:24,158 - root - INFO - [('Variable:0', []),
+ ('Variable_1:0', []),
+ ('Variable_2:0', []),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp_1:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp_1:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp:0', [30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp_1:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp_1:0', [1600]),
+ ('rnn/gmm/weights/RMSProp:0', [400, 121]),
+ ('rnn/gmm/weights/RMSProp_1:0', [400, 121]),
+ ('rnn/gmm/biases/RMSProp:0', [121]),
+ ('rnn/gmm/biases/RMSProp_1:0', [121])]
+2024-11-17 17:59:24,159 - root - INFO - trainable parameters:
+2024-11-17 17:59:24,159 - root - INFO - [('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121])]
+2024-11-17 17:59:24,159 - root - INFO - trainable parameter count:
+2024-11-17 17:59:24,160 - root - INFO - 3632431
+2024-11-17 17:59:24,195 - root - INFO - built graph
+2024-11-17 17:59:24,198 - root - INFO - restoring model parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-17 17:59:24,198 - tensorflow - INFO - Restoring parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-17 17:59:49,448 - handwriting.generator - INFO - Initializing Handwriting Model...
+2024-11-17 17:59:49,449 - root - INFO - 
+new run with parameters:
+{'attention_mixture_components': 10,
+ 'batch_size': 32,
+ 'batch_sizes': [32, 64, 64],
+ 'beta1_decay': 0.9,
+ 'beta1_decays': [0.9, 0.9, 0.9],
+ 'checkpoint_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/checkpoints',
+ 'early_stopping_steps': 1500,
+ 'enable_parameter_averaging': False,
+ 'grad_clip': 10,
+ 'keep_prob_scalar': 1.0,
+ 'learning_rate': 0.0001,
+ 'learning_rates': [0.0001, 5e-05, 2e-05],
+ 'log_dir': '/home/parthsolanke/dev/Penman/backend/logs',
+ 'log_interval': 20,
+ 'logging_level': 20,
+ 'loss_averaging_window': 100,
+ 'lstm_size': 400,
+ 'min_steps_to_checkpoint': 2000,
+ 'num_restarts': 2,
+ 'num_training_steps': 100000,
+ 'optimizer': 'rms',
+ 'output_mixture_components': 20,
+ 'output_units': 121,
+ 'patiences': [1500, 1000, 500],
+ 'prediction_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/predictions',
+ 'reader': None,
+ 'regularization_constant': 0.0,
+ 'restart_idx': 0,
+ 'validation_batch_size': 32,
+ 'warm_start_init_step': 17900}
+2024-11-17 17:59:53,443 - root - INFO - all parameters:
+2024-11-17 17:59:53,444 - root - INFO - [('Variable:0', []),
+ ('Variable_1:0', []),
+ ('Variable_2:0', []),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp_1:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp_1:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp:0', [30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp_1:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp_1:0', [1600]),
+ ('rnn/gmm/weights/RMSProp:0', [400, 121]),
+ ('rnn/gmm/weights/RMSProp_1:0', [400, 121]),
+ ('rnn/gmm/biases/RMSProp:0', [121]),
+ ('rnn/gmm/biases/RMSProp_1:0', [121])]
+2024-11-17 17:59:53,444 - root - INFO - trainable parameters:
+2024-11-17 17:59:53,445 - root - INFO - [('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121])]
+2024-11-17 17:59:53,445 - root - INFO - trainable parameter count:
+2024-11-17 17:59:53,446 - root - INFO - 3632431
+2024-11-17 17:59:53,480 - root - INFO - built graph
+2024-11-17 17:59:53,482 - root - INFO - restoring model parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-17 17:59:53,482 - tensorflow - INFO - Restoring parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-17 17:59:53,807 - uvicorn.error - INFO - Started server process [6787]
+2024-11-17 17:59:53,808 - uvicorn.error - INFO - Waiting for application startup.
+2024-11-17 17:59:53,808 - uvicorn.error - INFO - Application startup complete.
+2024-11-17 17:59:53,809 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2024-11-17 18:00:10,940 - app.routes - INFO - /generate-stream endpoint took 0.0001518726348876953 seconds
+2024-11-17 18:00:10,956 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-17 18:00:11,743 - handwriting.generator - ERROR - Error during real-time generation: You must feed a value for placeholder tensor 'Placeholder_8' with dtype float and shape [?,?,3]
+	 [[Node: Placeholder_8 = Placeholder[dtype=DT_FLOAT, shape=[?,?,3], _device="/job:localhost/replica:0/task:0/device:CPU:0"]()]]
+
+Caused by op 'Placeholder_8', defined at:
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/bin/uvicorn", line 8, in <module>
+    sys.exit(main())
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/click/core.py", line 1128, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/click/core.py", line 1053, in main
+    rv = self.invoke(ctx)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/click/core.py", line 1395, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/click/core.py", line 754, in invoke
+    return __callback(*args, **kwargs)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/uvicorn/main.py", line 426, in main
+    run(app, **kwargs)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/uvicorn/main.py", line 452, in run
+    server.run()
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/uvicorn/server.py", line 69, in run
+    return asyncio.get_event_loop().run_until_complete(self.serve(sockets=sockets))
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/asyncio/base_events.py", line 475, in run_until_complete
+    self.run_forever()
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/asyncio/base_events.py", line 442, in run_forever
+    self._run_once()
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/asyncio/base_events.py", line 1462, in _run_once
+    handle._run()
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/asyncio/events.py", line 145, in _run
+    self._callback(*self._args)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/uvicorn/server.py", line 76, in serve
+    config.load()
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/uvicorn/config.py", line 456, in load
+    self.loaded_app = import_from_string(self.app)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/uvicorn/importer.py", line 21, in import_from_string
+    module = importlib.import_module(module_str)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "./main.py", line 4, in <module>
+    from app.routes import router as handwriting_router
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "./app/routes.py", line 15, in <module>
+    hand = Hand()
+  File "./handwriting/generator.py", line 35, in __init__
+    **MODEL_CONFIG
+  File "./handwriting/models/rnn.py", line 85, in __init__
+    super(rnn, self).__init__(**kwargs)
+  File "./handwriting/models/tf_base_model.py", line 108, in __init__
+    self.graph = self.build_graph()
+  File "./handwriting/models/tf_base_model.py", line 399, in build_graph
+    self.loss = self.calculate_loss()
+  File "./handwriting/models/rnn.py", line 175, in calculate_loss
+    self.x_prime = tf.placeholder(tf.float32, [None, None, 3])
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/tensorflow/python/ops/array_ops.py", line 1746, in placeholder
+    return gen_array_ops._placeholder(dtype=dtype, shape=shape, name=name)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/tensorflow/python/ops/gen_array_ops.py", line 3051, in _placeholder
+    "Placeholder", dtype=dtype, shape=shape, name=name)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py", line 787, in _apply_op_helper
+    op_def=op_def)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/tensorflow/python/framework/ops.py", line 3271, in create_op
+    op_def=op_def)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/tensorflow/python/framework/ops.py", line 1650, in __init__
+    self._traceback = self._graph._extract_stack()  # pylint: disable=protected-access
+
+InvalidArgumentError (see above for traceback): You must feed a value for placeholder tensor 'Placeholder_8' with dtype float and shape [?,?,3]
+	 [[Node: Placeholder_8 = Placeholder[dtype=DT_FLOAT, shape=[?,?,3], _device="/job:localhost/replica:0/task:0/device:CPU:0"]()]]
+
+2024-11-17 18:00:11,745 - handwriting.generator - ERROR - Traceback (most recent call last):
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1361, in _do_call
+    return fn(*args)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1340, in _run_fn
+    target_list, status, run_metadata)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/tensorflow/python/framework/errors_impl.py", line 516, in __exit__
+    c_api.TF_GetCode(self.status.status))
+tensorflow.python.framework.errors_impl.InvalidArgumentError: You must feed a value for placeholder tensor 'Placeholder_8' with dtype float and shape [?,?,3]
+	 [[Node: Placeholder_8 = Placeholder[dtype=DT_FLOAT, shape=[?,?,3], _device="/job:localhost/replica:0/task:0/device:CPU:0"]()]]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./handwriting/generator.py", line 281, in stream_write
+    timeout=10.0
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/asyncio/tasks.py", line 358, in wait_for
+    return fut.result()
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/concurrent/futures/thread.py", line 56, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "./handwriting/generator.py", line 320, in _generate_batch_samples
+    self.nn.bias: batch_biases
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 905, in run
+    run_metadata_ptr)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1137, in _run
+    feed_dict_tensor, options, run_metadata)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1355, in _do_run
+    options, run_metadata)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1374, in _do_call
+    raise type(e)(node_def, op, message)
+tensorflow.python.framework.errors_impl.InvalidArgumentError: You must feed a value for placeholder tensor 'Placeholder_8' with dtype float and shape [?,?,3]
+	 [[Node: Placeholder_8 = Placeholder[dtype=DT_FLOAT, shape=[?,?,3], _device="/job:localhost/replica:0/task:0/device:CPU:0"]()]]
+
+Caused by op 'Placeholder_8', defined at:
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/bin/uvicorn", line 8, in <module>
+    sys.exit(main())
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/click/core.py", line 1128, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/click/core.py", line 1053, in main
+    rv = self.invoke(ctx)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/click/core.py", line 1395, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/click/core.py", line 754, in invoke
+    return __callback(*args, **kwargs)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/uvicorn/main.py", line 426, in main
+    run(app, **kwargs)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/uvicorn/main.py", line 452, in run
+    server.run()
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/uvicorn/server.py", line 69, in run
+    return asyncio.get_event_loop().run_until_complete(self.serve(sockets=sockets))
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/asyncio/base_events.py", line 475, in run_until_complete
+    self.run_forever()
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/asyncio/base_events.py", line 442, in run_forever
+    self._run_once()
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/asyncio/base_events.py", line 1462, in _run_once
+    handle._run()
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/asyncio/events.py", line 145, in _run
+    self._callback(*self._args)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/uvicorn/server.py", line 76, in serve
+    config.load()
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/uvicorn/config.py", line 456, in load
+    self.loaded_app = import_from_string(self.app)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/uvicorn/importer.py", line 21, in import_from_string
+    module = importlib.import_module(module_str)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "./main.py", line 4, in <module>
+    from app.routes import router as handwriting_router
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "./app/routes.py", line 15, in <module>
+    hand = Hand()
+  File "./handwriting/generator.py", line 35, in __init__
+    **MODEL_CONFIG
+  File "./handwriting/models/rnn.py", line 85, in __init__
+    super(rnn, self).__init__(**kwargs)
+  File "./handwriting/models/tf_base_model.py", line 108, in __init__
+    self.graph = self.build_graph()
+  File "./handwriting/models/tf_base_model.py", line 399, in build_graph
+    self.loss = self.calculate_loss()
+  File "./handwriting/models/rnn.py", line 175, in calculate_loss
+    self.x_prime = tf.placeholder(tf.float32, [None, None, 3])
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/tensorflow/python/ops/array_ops.py", line 1746, in placeholder
+    return gen_array_ops._placeholder(dtype=dtype, shape=shape, name=name)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/tensorflow/python/ops/gen_array_ops.py", line 3051, in _placeholder
+    "Placeholder", dtype=dtype, shape=shape, name=name)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py", line 787, in _apply_op_helper
+    op_def=op_def)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/tensorflow/python/framework/ops.py", line 3271, in create_op
+    op_def=op_def)
+  File "/home/parthsolanke/miniconda3/envs/handwriting-env/lib/python3.6/site-packages/tensorflow/python/framework/ops.py", line 1650, in __init__
+    self._traceback = self._graph._extract_stack()  # pylint: disable=protected-access
+
+InvalidArgumentError (see above for traceback): You must feed a value for placeholder tensor 'Placeholder_8' with dtype float and shape [?,?,3]
+	 [[Node: Placeholder_8 = Placeholder[dtype=DT_FLOAT, shape=[?,?,3], _device="/job:localhost/replica:0/task:0/device:CPU:0"]()]]
+
+
+2024-11-17 18:01:35,408 - uvicorn.error - INFO - Shutting down
+2024-11-17 18:01:35,511 - uvicorn.error - INFO - Waiting for application shutdown.
+2024-11-17 18:01:35,512 - uvicorn.error - INFO - Application shutdown complete.
+2024-11-17 18:01:35,512 - uvicorn.error - INFO - Finished server process [6787]
+2024-11-17 18:01:42,440 - handwriting.generator - INFO - Initializing Handwriting Model...
+2024-11-17 18:01:42,441 - root - INFO - 
+new run with parameters:
+{'attention_mixture_components': 10,
+ 'batch_size': 32,
+ 'batch_sizes': [32, 64, 64],
+ 'beta1_decay': 0.9,
+ 'beta1_decays': [0.9, 0.9, 0.9],
+ 'checkpoint_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/checkpoints',
+ 'early_stopping_steps': 1500,
+ 'enable_parameter_averaging': False,
+ 'grad_clip': 10,
+ 'keep_prob_scalar': 1.0,
+ 'learning_rate': 0.0001,
+ 'learning_rates': [0.0001, 5e-05, 2e-05],
+ 'log_dir': '/home/parthsolanke/dev/Penman/backend/logs',
+ 'log_interval': 20,
+ 'logging_level': 20,
+ 'loss_averaging_window': 100,
+ 'lstm_size': 400,
+ 'min_steps_to_checkpoint': 2000,
+ 'num_restarts': 2,
+ 'num_training_steps': 100000,
+ 'optimizer': 'rms',
+ 'output_mixture_components': 20,
+ 'output_units': 121,
+ 'patiences': [1500, 1000, 500],
+ 'prediction_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/predictions',
+ 'reader': None,
+ 'regularization_constant': 0.0,
+ 'restart_idx': 0,
+ 'validation_batch_size': 32,
+ 'warm_start_init_step': 17900}
+2024-11-17 18:01:45,656 - root - INFO - all parameters:
+2024-11-17 18:01:45,657 - root - INFO - [('Variable:0', []),
+ ('Variable_1:0', []),
+ ('Variable_2:0', []),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp_1:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp_1:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp:0', [30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp_1:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp_1:0', [1600]),
+ ('rnn/gmm/weights/RMSProp:0', [400, 121]),
+ ('rnn/gmm/weights/RMSProp_1:0', [400, 121]),
+ ('rnn/gmm/biases/RMSProp:0', [121]),
+ ('rnn/gmm/biases/RMSProp_1:0', [121])]
+2024-11-17 18:01:45,657 - root - INFO - trainable parameters:
+2024-11-17 18:01:45,657 - root - INFO - [('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121])]
+2024-11-17 18:01:45,657 - root - INFO - trainable parameter count:
+2024-11-17 18:01:45,658 - root - INFO - 3632431
+2024-11-17 18:01:45,687 - root - INFO - built graph
+2024-11-17 18:01:45,690 - root - INFO - restoring model parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-17 18:01:45,690 - tensorflow - INFO - Restoring parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-17 18:01:46,025 - uvicorn.error - INFO - Started server process [7361]
+2024-11-17 18:01:46,026 - uvicorn.error - INFO - Waiting for application startup.
+2024-11-17 18:01:46,026 - uvicorn.error - INFO - Application startup complete.
+2024-11-17 18:01:46,027 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2024-11-17 18:01:49,945 - app.routes - INFO - /generate-stream endpoint took 0.00017571449279785156 seconds
+2024-11-17 18:01:49,964 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-17 18:02:40,122 - uvicorn.error - INFO - Shutting down
+2024-11-17 18:02:40,225 - uvicorn.error - INFO - Waiting for application shutdown.
+2024-11-17 18:02:40,226 - uvicorn.error - INFO - Application shutdown complete.
+2024-11-17 18:02:40,226 - uvicorn.error - INFO - Finished server process [7361]
+2024-11-17 18:02:48,074 - handwriting.generator - INFO - Initializing Handwriting Model...
+2024-11-17 18:02:48,075 - root - INFO - 
+new run with parameters:
+{'attention_mixture_components': 10,
+ 'batch_size': 32,
+ 'batch_sizes': [32, 64, 64],
+ 'beta1_decay': 0.9,
+ 'beta1_decays': [0.9, 0.9, 0.9],
+ 'checkpoint_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/checkpoints',
+ 'early_stopping_steps': 1500,
+ 'enable_parameter_averaging': False,
+ 'grad_clip': 10,
+ 'keep_prob_scalar': 1.0,
+ 'learning_rate': 0.0001,
+ 'learning_rates': [0.0001, 5e-05, 2e-05],
+ 'log_dir': '/home/parthsolanke/dev/Penman/backend/logs',
+ 'log_interval': 20,
+ 'logging_level': 20,
+ 'loss_averaging_window': 100,
+ 'lstm_size': 400,
+ 'min_steps_to_checkpoint': 2000,
+ 'num_restarts': 2,
+ 'num_training_steps': 100000,
+ 'optimizer': 'rms',
+ 'output_mixture_components': 20,
+ 'output_units': 121,
+ 'patiences': [1500, 1000, 500],
+ 'prediction_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/predictions',
+ 'reader': None,
+ 'regularization_constant': 0.0,
+ 'restart_idx': 0,
+ 'validation_batch_size': 32,
+ 'warm_start_init_step': 17900}
+2024-11-17 18:02:50,964 - root - INFO - all parameters:
+2024-11-17 18:02:50,965 - root - INFO - [('Variable:0', []),
+ ('Variable_1:0', []),
+ ('Variable_2:0', []),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp_1:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp_1:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp:0', [30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp_1:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp_1:0', [1600]),
+ ('rnn/gmm/weights/RMSProp:0', [400, 121]),
+ ('rnn/gmm/weights/RMSProp_1:0', [400, 121]),
+ ('rnn/gmm/biases/RMSProp:0', [121]),
+ ('rnn/gmm/biases/RMSProp_1:0', [121])]
+2024-11-17 18:02:50,966 - root - INFO - trainable parameters:
+2024-11-17 18:02:50,966 - root - INFO - [('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121])]
+2024-11-17 18:02:50,966 - root - INFO - trainable parameter count:
+2024-11-17 18:02:50,967 - root - INFO - 3632431
+2024-11-17 18:02:50,999 - root - INFO - built graph
+2024-11-17 18:02:51,001 - root - INFO - restoring model parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-17 18:02:51,001 - tensorflow - INFO - Restoring parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-17 18:02:51,327 - uvicorn.error - INFO - Started server process [7763]
+2024-11-17 18:02:51,328 - uvicorn.error - INFO - Waiting for application startup.
+2024-11-17 18:02:51,328 - uvicorn.error - INFO - Application startup complete.
+2024-11-17 18:02:51,329 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2024-11-17 18:02:55,046 - app.routes - INFO - /generate-stream endpoint took 0.000217437744140625 seconds
+2024-11-17 18:02:55,064 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-17 18:03:05,193 - handwriting.generator - ERROR - Error during real-time generation: 
+2024-11-17 18:03:05,194 - handwriting.generator - ERROR - Traceback (most recent call last):
+  File "./handwriting/generator.py", line 272, in stream_write
+    self.nn.bias: [bias]
+concurrent.futures._base.CancelledError
+
+2024-11-17 18:03:05,194 - handwriting.generator - INFO - stream_write method took 10.130130529403687 seconds
+2024-11-17 18:16:03,312 - uvicorn.error - INFO - Shutting down
+2024-11-17 18:16:03,429 - uvicorn.error - INFO - Waiting for application shutdown.
+2024-11-17 18:16:03,430 - uvicorn.error - INFO - Application shutdown complete.
+2024-11-17 18:16:03,430 - uvicorn.error - INFO - Finished server process [7763]
+2024-11-18 13:00:05,609 - root - INFO - 
+new run with parameters:
+{'attention_mixture_components': 10,
+ 'batch_size': 32,
+ 'batch_sizes': [32, 64, 64],
+ 'beta1_decay': 0.9,
+ 'beta1_decays': [0.9, 0.9, 0.9],
+ 'checkpoint_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/checkpoints',
+ 'early_stopping_steps': 1500,
+ 'enable_parameter_averaging': False,
+ 'grad_clip': 10,
+ 'keep_prob_scalar': 1.0,
+ 'learning_rate': 0.0001,
+ 'learning_rates': [0.0001, 5e-05, 2e-05],
+ 'log_dir': '/home/parthsolanke/dev/Penman/backend/logs',
+ 'log_interval': 20,
+ 'logging_level': 20,
+ 'loss_averaging_window': 100,
+ 'lstm_size': 400,
+ 'min_steps_to_checkpoint': 2000,
+ 'num_restarts': 2,
+ 'num_training_steps': 100000,
+ 'optimizer': 'rms',
+ 'output_mixture_components': 20,
+ 'output_units': 121,
+ 'patiences': [1500, 1000, 500],
+ 'prediction_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/predictions',
+ 'reader': None,
+ 'regularization_constant': 0.0,
+ 'restart_idx': 0,
+ 'validation_batch_size': 32,
+ 'warm_start_init_step': 17900}
+2024-11-18 13:00:09,944 - root - INFO - all parameters:
+2024-11-18 13:00:09,945 - root - INFO - [('Variable:0', []),
+ ('Variable_1:0', []),
+ ('Variable_2:0', []),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp_1:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp_1:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp:0', [30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp_1:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp_1:0', [1600]),
+ ('rnn/gmm/weights/RMSProp:0', [400, 121]),
+ ('rnn/gmm/weights/RMSProp_1:0', [400, 121]),
+ ('rnn/gmm/biases/RMSProp:0', [121]),
+ ('rnn/gmm/biases/RMSProp_1:0', [121])]
+2024-11-18 13:00:09,945 - root - INFO - trainable parameters:
+2024-11-18 13:00:09,946 - root - INFO - [('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121])]
+2024-11-18 13:00:09,946 - root - INFO - trainable parameter count:
+2024-11-18 13:00:09,946 - root - INFO - 3632431
+2024-11-18 13:00:09,992 - root - INFO - built graph
+2024-11-18 13:00:09,996 - root - INFO - restoring model parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-18 13:00:09,996 - tensorflow - INFO - Restoring parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-18 13:00:10,386 - uvicorn.error - INFO - Started server process [3808]
+2024-11-18 13:00:10,387 - uvicorn.error - INFO - Waiting for application startup.
+2024-11-18 13:00:10,387 - uvicorn.error - INFO - Application startup complete.
+2024-11-18 13:00:10,388 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2024-11-18 13:00:47,259 - uvicorn.error - INFO - Shutting down
+2024-11-18 13:00:47,361 - uvicorn.error - INFO - Waiting for application shutdown.
+2024-11-18 13:00:47,361 - uvicorn.error - INFO - Application shutdown complete.
+2024-11-18 13:00:47,362 - uvicorn.error - INFO - Finished server process [3808]
+2024-11-18 13:00:53,064 - root - INFO - 
+new run with parameters:
+{'attention_mixture_components': 10,
+ 'batch_size': 32,
+ 'batch_sizes': [32, 64, 64],
+ 'beta1_decay': 0.9,
+ 'beta1_decays': [0.9, 0.9, 0.9],
+ 'checkpoint_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/checkpoints',
+ 'early_stopping_steps': 1500,
+ 'enable_parameter_averaging': False,
+ 'grad_clip': 10,
+ 'keep_prob_scalar': 1.0,
+ 'learning_rate': 0.0001,
+ 'learning_rates': [0.0001, 5e-05, 2e-05],
+ 'log_dir': '/home/parthsolanke/dev/Penman/backend/logs',
+ 'log_interval': 20,
+ 'logging_level': 20,
+ 'loss_averaging_window': 100,
+ 'lstm_size': 400,
+ 'min_steps_to_checkpoint': 2000,
+ 'num_restarts': 2,
+ 'num_training_steps': 100000,
+ 'optimizer': 'rms',
+ 'output_mixture_components': 20,
+ 'output_units': 121,
+ 'patiences': [1500, 1000, 500],
+ 'prediction_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/predictions',
+ 'reader': None,
+ 'regularization_constant': 0.0,
+ 'restart_idx': 0,
+ 'validation_batch_size': 32,
+ 'warm_start_init_step': 17900}
+2024-11-18 13:00:56,973 - root - INFO - all parameters:
+2024-11-18 13:00:56,974 - root - INFO - [('Variable:0', []),
+ ('Variable_1:0', []),
+ ('Variable_2:0', []),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp_1:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp_1:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp:0', [30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp_1:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp_1:0', [1600]),
+ ('rnn/gmm/weights/RMSProp:0', [400, 121]),
+ ('rnn/gmm/weights/RMSProp_1:0', [400, 121]),
+ ('rnn/gmm/biases/RMSProp:0', [121]),
+ ('rnn/gmm/biases/RMSProp_1:0', [121])]
+2024-11-18 13:00:56,974 - root - INFO - trainable parameters:
+2024-11-18 13:00:56,974 - root - INFO - [('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121])]
+2024-11-18 13:00:56,974 - root - INFO - trainable parameter count:
+2024-11-18 13:00:56,975 - root - INFO - 3632431
+2024-11-18 13:00:57,003 - root - INFO - built graph
+2024-11-18 13:00:57,006 - root - INFO - restoring model parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-18 13:00:57,006 - tensorflow - INFO - Restoring parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-18 13:00:57,374 - uvicorn.error - INFO - Started server process [4124]
+2024-11-18 13:00:57,375 - uvicorn.error - INFO - Waiting for application startup.
+2024-11-18 13:00:57,375 - uvicorn.error - INFO - Application startup complete.
+2024-11-18 13:00:57,375 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2024-11-18 13:01:08,842 - handwriting.generator - INFO - Sampling strokes for handwriting generation...
+2024-11-18 13:01:11,497 - handwriting.generator - INFO - Drawing SVG output...
+2024-11-18 13:01:11,569 - app.routes - INFO - /generate-simple endpoint took 2.727933406829834 seconds
+2024-11-18 13:01:15,905 - handwriting.generator - INFO - Sampling strokes for handwriting generation...
+2024-11-18 13:01:17,914 - handwriting.generator - INFO - Drawing SVG output...
+2024-11-18 13:01:17,935 - app.routes - INFO - /generate-simple endpoint took 2.0314078330993652 seconds
+2024-11-18 13:01:24,871 - app.routes - INFO - /generate-stream endpoint took 0.00015163421630859375 seconds
+2024-11-18 13:01:24,872 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-18 13:01:43,031 - handwriting.generator - INFO - Sampling strokes for handwriting generation...
+2024-11-18 13:01:50,965 - handwriting.generator - INFO - Generating PDF output...
+2024-11-18 13:01:51,258 - app.routes - INFO - /svg-to-pdf endpoint took 0.2940232753753662 seconds
+2024-11-18 13:01:53,421 - handwriting.generator - INFO - Drawing SVG output...
+2024-11-18 13:01:53,554 - app.routes - INFO - /generate endpoint took 10.523928880691528 seconds
+2024-11-18 13:01:59,373 - handwriting.generator - INFO - Sampling strokes for handwriting generation...
+2024-11-18 13:02:01,638 - handwriting.generator - INFO - Sampling strokes for handwriting generation...
+2024-11-18 13:02:03,718 - handwriting.generator - INFO - Drawing SVG output...
+2024-11-18 13:02:03,741 - app.routes - INFO - /generate-simple endpoint took 2.1041042804718018 seconds
+2024-11-18 13:02:09,355 - handwriting.generator - INFO - Drawing SVG output...
+2024-11-18 13:02:09,471 - app.routes - INFO - /generate endpoint took 10.09815526008606 seconds
+2024-11-18 13:02:54,024 - app.routes - INFO - /generate-stream endpoint took 0.0001385211944580078 seconds
+2024-11-18 13:02:54,025 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-18 13:03:38,902 - app.routes - INFO - /generate-stream endpoint took 0.0002377033233642578 seconds
+2024-11-18 13:03:38,905 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-18 13:04:19,624 - app.routes - INFO - /generate-stream endpoint took 0.0001380443572998047 seconds
+2024-11-18 13:04:19,626 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-18 13:04:40,847 - handwriting.generator - ERROR - Error during real-time generation: 
+2024-11-18 13:04:40,847 - handwriting.generator - ERROR - Traceback (most recent call last):
+  File "./handwriting/generator.py", line 278, in stream_write
+    self.nn.bias: [bias]
+concurrent.futures._base.CancelledError
+
+2024-11-18 13:04:45,875 - app.routes - INFO - /generate-stream endpoint took 0.00013709068298339844 seconds
+2024-11-18 13:04:45,876 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-18 13:04:55,053 - handwriting.generator - ERROR - Error during real-time generation: 
+2024-11-18 13:04:55,054 - handwriting.generator - ERROR - Traceback (most recent call last):
+  File "./handwriting/generator.py", line 278, in stream_write
+    self.nn.bias: [bias]
+concurrent.futures._base.CancelledError
+
+2024-11-18 13:06:36,239 - uvicorn.error - INFO - Shutting down
+2024-11-18 13:06:36,341 - uvicorn.error - INFO - Waiting for application shutdown.
+2024-11-18 13:06:36,342 - uvicorn.error - INFO - Application shutdown complete.
+2024-11-18 13:06:36,342 - uvicorn.error - INFO - Finished server process [4124]
+2024-11-18 13:06:41,850 - root - INFO - 
+new run with parameters:
+{'attention_mixture_components': 10,
+ 'batch_size': 32,
+ 'batch_sizes': [32, 64, 64],
+ 'beta1_decay': 0.9,
+ 'beta1_decays': [0.9, 0.9, 0.9],
+ 'checkpoint_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/checkpoints',
+ 'early_stopping_steps': 1500,
+ 'enable_parameter_averaging': False,
+ 'grad_clip': 10,
+ 'keep_prob_scalar': 1.0,
+ 'learning_rate': 0.0001,
+ 'learning_rates': [0.0001, 5e-05, 2e-05],
+ 'log_dir': '/home/parthsolanke/dev/Penman/backend/logs',
+ 'log_interval': 20,
+ 'logging_level': 20,
+ 'loss_averaging_window': 100,
+ 'lstm_size': 400,
+ 'min_steps_to_checkpoint': 2000,
+ 'num_restarts': 2,
+ 'num_training_steps': 100000,
+ 'optimizer': 'rms',
+ 'output_mixture_components': 20,
+ 'output_units': 121,
+ 'patiences': [1500, 1000, 500],
+ 'prediction_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/predictions',
+ 'reader': None,
+ 'regularization_constant': 0.0,
+ 'restart_idx': 0,
+ 'validation_batch_size': 32,
+ 'warm_start_init_step': 17900}
+2024-11-18 13:06:46,438 - root - INFO - all parameters:
+2024-11-18 13:06:46,439 - root - INFO - [('Variable:0', []),
+ ('Variable_1:0', []),
+ ('Variable_2:0', []),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp_1:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp_1:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp:0', [30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp_1:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp_1:0', [1600]),
+ ('rnn/gmm/weights/RMSProp:0', [400, 121]),
+ ('rnn/gmm/weights/RMSProp_1:0', [400, 121]),
+ ('rnn/gmm/biases/RMSProp:0', [121]),
+ ('rnn/gmm/biases/RMSProp_1:0', [121])]
+2024-11-18 13:06:46,440 - root - INFO - trainable parameters:
+2024-11-18 13:06:46,440 - root - INFO - [('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121])]
+2024-11-18 13:06:46,440 - root - INFO - trainable parameter count:
+2024-11-18 13:06:46,441 - root - INFO - 3632431
+2024-11-18 13:06:46,485 - root - INFO - built graph
+2024-11-18 13:06:46,488 - root - INFO - restoring model parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-18 13:06:46,489 - tensorflow - INFO - Restoring parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-18 13:06:45,944 - uvicorn.error - INFO - Started server process [6002]
+2024-11-18 13:06:45,945 - uvicorn.error - INFO - Waiting for application startup.
+2024-11-18 13:06:45,945 - uvicorn.error - INFO - Application startup complete.
+2024-11-18 13:06:45,946 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2024-11-18 13:07:00,076 - app.routes - INFO - /generate-stream endpoint took 0.00017714500427246094 seconds
+2024-11-18 13:07:00,100 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-18 13:07:38,077 - handwriting.generator - INFO - Sampling strokes for handwriting generation...
+2024-11-18 13:07:41,660 - handwriting.generator - INFO - Sampling strokes for handwriting generation...
+2024-11-18 13:07:44,360 - handwriting.generator - INFO - Drawing SVG output...
+2024-11-18 13:07:44,387 - app.routes - INFO - /generate-simple endpoint took 2.727213144302368 seconds
+2024-11-18 13:07:44,737 - app.routes - INFO - /generate-stream endpoint took 0.00022983551025390625 seconds
+2024-11-18 13:07:44,738 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-18 13:07:47,849 - handwriting.generator - INFO - Generating PDF output...
+2024-11-18 13:07:48,117 - app.routes - INFO - /svg-to-pdf endpoint took 0.26858949661254883 seconds
+2024-11-18 13:07:49,073 - handwriting.generator - INFO - Drawing SVG output...
+2024-11-18 13:07:49,219 - app.routes - INFO - /generate endpoint took 11.143288135528564 seconds
+2024-11-18 13:08:58,616 - uvicorn.error - INFO - Shutting down
+2024-11-18 13:08:58,719 - uvicorn.error - INFO - Waiting for application shutdown.
+2024-11-18 13:08:58,719 - uvicorn.error - INFO - Application shutdown complete.
+2024-11-18 13:08:58,720 - uvicorn.error - INFO - Finished server process [6002]
+2024-11-18 13:09:13,737 - root - INFO - 
+new run with parameters:
+{'attention_mixture_components': 10,
+ 'batch_size': 32,
+ 'batch_sizes': [32, 64, 64],
+ 'beta1_decay': 0.9,
+ 'beta1_decays': [0.9, 0.9, 0.9],
+ 'checkpoint_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/checkpoints',
+ 'early_stopping_steps': 1500,
+ 'enable_parameter_averaging': False,
+ 'grad_clip': 10,
+ 'keep_prob_scalar': 1.0,
+ 'learning_rate': 0.0001,
+ 'learning_rates': [0.0001, 5e-05, 2e-05],
+ 'log_dir': '/home/parthsolanke/dev/Penman/backend/logs',
+ 'log_interval': 20,
+ 'logging_level': 20,
+ 'loss_averaging_window': 100,
+ 'lstm_size': 400,
+ 'min_steps_to_checkpoint': 2000,
+ 'num_restarts': 2,
+ 'num_training_steps': 100000,
+ 'optimizer': 'rms',
+ 'output_mixture_components': 20,
+ 'output_units': 121,
+ 'patiences': [1500, 1000, 500],
+ 'prediction_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/predictions',
+ 'reader': None,
+ 'regularization_constant': 0.0,
+ 'restart_idx': 0,
+ 'validation_batch_size': 32,
+ 'warm_start_init_step': 17900}
+2024-11-18 13:09:17,523 - root - INFO - all parameters:
+2024-11-18 13:09:17,524 - root - INFO - [('Variable:0', []),
+ ('Variable_1:0', []),
+ ('Variable_2:0', []),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp_1:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp_1:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp:0', [30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp_1:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp_1:0', [1600]),
+ ('rnn/gmm/weights/RMSProp:0', [400, 121]),
+ ('rnn/gmm/weights/RMSProp_1:0', [400, 121]),
+ ('rnn/gmm/biases/RMSProp:0', [121]),
+ ('rnn/gmm/biases/RMSProp_1:0', [121])]
+2024-11-18 13:09:17,524 - root - INFO - trainable parameters:
+2024-11-18 13:09:17,525 - root - INFO - [('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121])]
+2024-11-18 13:09:17,525 - root - INFO - trainable parameter count:
+2024-11-18 13:09:17,525 - root - INFO - 3632431
+2024-11-18 13:09:17,612 - root - INFO - built graph
+2024-11-18 13:09:17,621 - root - INFO - restoring model parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-18 13:09:17,621 - tensorflow - INFO - Restoring parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-18 13:09:18,017 - uvicorn.error - INFO - Started server process [6784]
+2024-11-18 13:09:18,018 - uvicorn.error - INFO - Waiting for application startup.
+2024-11-18 13:09:18,019 - uvicorn.error - INFO - Application startup complete.
+2024-11-18 13:09:18,019 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2024-11-18 13:09:32,472 - uvicorn.error - INFO - Shutting down
+2024-11-18 13:09:32,576 - uvicorn.error - INFO - Waiting for application shutdown.
+2024-11-18 13:09:32,576 - uvicorn.error - INFO - Application shutdown complete.
+2024-11-18 13:09:32,577 - uvicorn.error - INFO - Finished server process [6784]
+2024-11-20 16:22:31,539 - root - INFO - 
+new run with parameters:
+{'attention_mixture_components': 10,
+ 'batch_size': 32,
+ 'batch_sizes': [32, 64, 64],
+ 'beta1_decay': 0.9,
+ 'beta1_decays': [0.9, 0.9, 0.9],
+ 'checkpoint_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/checkpoints',
+ 'early_stopping_steps': 1500,
+ 'enable_parameter_averaging': False,
+ 'grad_clip': 10,
+ 'keep_prob_scalar': 1.0,
+ 'learning_rate': 0.0001,
+ 'learning_rates': [0.0001, 5e-05, 2e-05],
+ 'log_dir': '/home/parthsolanke/dev/Penman/backend/logs',
+ 'log_interval': 20,
+ 'logging_level': 20,
+ 'loss_averaging_window': 100,
+ 'lstm_size': 400,
+ 'min_steps_to_checkpoint': 2000,
+ 'num_restarts': 2,
+ 'num_training_steps': 100000,
+ 'optimizer': 'rms',
+ 'output_mixture_components': 20,
+ 'output_units': 121,
+ 'patiences': [1500, 1000, 500],
+ 'prediction_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/predictions',
+ 'reader': None,
+ 'regularization_constant': 0.0,
+ 'restart_idx': 0,
+ 'validation_batch_size': 32,
+ 'warm_start_init_step': 17900}
+2024-11-20 16:22:33,992 - root - INFO - all parameters:
+2024-11-20 16:22:33,993 - root - INFO - [('Variable:0', []),
+ ('Variable_1:0', []),
+ ('Variable_2:0', []),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp_1:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp_1:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp:0', [30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp_1:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp_1:0', [1600]),
+ ('rnn/gmm/weights/RMSProp:0', [400, 121]),
+ ('rnn/gmm/weights/RMSProp_1:0', [400, 121]),
+ ('rnn/gmm/biases/RMSProp:0', [121]),
+ ('rnn/gmm/biases/RMSProp_1:0', [121])]
+2024-11-20 16:22:33,993 - root - INFO - trainable parameters:
+2024-11-20 16:22:33,993 - root - INFO - [('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121])]
+2024-11-20 16:22:33,993 - root - INFO - trainable parameter count:
+2024-11-20 16:22:33,993 - root - INFO - 3632431
+2024-11-20 16:22:34,022 - root - INFO - built graph
+2024-11-20 16:22:34,025 - root - INFO - restoring model parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-20 16:22:34,026 - tensorflow - INFO - Restoring parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-20 16:22:34,339 - uvicorn.error - INFO - Started server process [81982]
+2024-11-20 16:22:34,340 - uvicorn.error - INFO - Waiting for application startup.
+2024-11-20 16:22:34,340 - uvicorn.error - INFO - Application startup complete.
+2024-11-20 16:22:34,340 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2024-11-20 16:22:50,827 - app.routes - INFO - /generate-stream endpoint took 9.655952453613281e-05 seconds
+2024-11-20 16:22:50,839 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 16:38:04,787 - app.routes - INFO - /generate-stream endpoint took 5.435943603515625e-05 seconds
+2024-11-20 16:38:04,789 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 16:38:26,660 - app.routes - INFO - /generate-stream endpoint took 6.604194641113281e-05 seconds
+2024-11-20 16:38:26,661 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 16:41:49,956 - app.routes - INFO - /generate-stream endpoint took 8.392333984375e-05 seconds
+2024-11-20 16:41:49,957 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 16:42:03,772 - handwriting.generator - ERROR - Error during real-time generation: 
+2024-11-20 16:42:03,773 - handwriting.generator - ERROR - Traceback (most recent call last):
+  File "./handwriting/generator.py", line 316, in stream_write
+    self.nn.bias: [bias]
+concurrent.futures._base.CancelledError
+
+2024-11-20 16:42:27,246 - app.routes - INFO - /generate-stream endpoint took 0.00010776519775390625 seconds
+2024-11-20 16:42:27,247 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 16:42:42,923 - handwriting.generator - ERROR - Error during real-time generation: 
+2024-11-20 16:42:42,924 - handwriting.generator - ERROR - Traceback (most recent call last):
+  File "./handwriting/generator.py", line 316, in stream_write
+    self.nn.bias: [bias]
+concurrent.futures._base.CancelledError
+
+2024-11-20 16:43:56,852 - app.routes - INFO - /generate-stream endpoint took 8.845329284667969e-05 seconds
+2024-11-20 16:43:56,853 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 16:46:36,280 - app.routes - INFO - /generate-stream endpoint took 9.608268737792969e-05 seconds
+2024-11-20 16:46:36,281 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 16:47:49,501 - app.routes - INFO - /generate-stream endpoint took 0.00010991096496582031 seconds
+2024-11-20 16:47:49,502 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 16:50:11,076 - app.routes - INFO - /generate-stream endpoint took 7.43865966796875e-05 seconds
+2024-11-20 16:50:11,077 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 16:52:00,309 - app.routes - INFO - /generate-stream endpoint took 7.343292236328125e-05 seconds
+2024-11-20 16:52:00,310 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 16:57:33,980 - app.routes - INFO - /generate-stream endpoint took 0.0001285076141357422 seconds
+2024-11-20 16:57:33,981 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 16:59:51,085 - app.routes - INFO - /generate-stream endpoint took 0.00015878677368164062 seconds
+2024-11-20 16:59:51,086 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:00:02,570 - handwriting.generator - ERROR - Error during real-time generation: 
+2024-11-20 17:00:02,570 - handwriting.generator - ERROR - Traceback (most recent call last):
+  File "./handwriting/generator.py", line 316, in stream_write
+    self.nn.bias: [bias]
+concurrent.futures._base.CancelledError
+
+2024-11-20 17:00:07,646 - app.routes - INFO - /generate-stream endpoint took 9.465217590332031e-05 seconds
+2024-11-20 17:00:07,646 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:00:25,287 - handwriting.generator - ERROR - Error during real-time generation: 
+2024-11-20 17:00:25,288 - handwriting.generator - ERROR - Traceback (most recent call last):
+  File "./handwriting/generator.py", line 316, in stream_write
+    self.nn.bias: [bias]
+concurrent.futures._base.CancelledError
+
+2024-11-20 17:00:30,463 - app.routes - INFO - /generate-stream endpoint took 8.344650268554688e-05 seconds
+2024-11-20 17:00:30,463 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:00:57,300 - handwriting.generator - ERROR - Error during real-time generation: 
+2024-11-20 17:00:57,301 - handwriting.generator - ERROR - Traceback (most recent call last):
+  File "./handwriting/generator.py", line 316, in stream_write
+    self.nn.bias: [bias]
+concurrent.futures._base.CancelledError
+
+2024-11-20 17:01:01,458 - app.routes - INFO - /generate-stream endpoint took 8.463859558105469e-05 seconds
+2024-11-20 17:01:01,459 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:01:25,016 - handwriting.generator - ERROR - Error during real-time generation: 
+2024-11-20 17:01:25,016 - handwriting.generator - ERROR - Traceback (most recent call last):
+  File "./handwriting/generator.py", line 316, in stream_write
+    self.nn.bias: [bias]
+concurrent.futures._base.CancelledError
+
+2024-11-20 17:01:30,936 - app.routes - INFO - /generate-stream endpoint took 7.581710815429688e-05 seconds
+2024-11-20 17:01:30,937 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:02:18,956 - app.routes - INFO - /generate-stream endpoint took 8.034706115722656e-05 seconds
+2024-11-20 17:02:18,957 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:02:26,157 - handwriting.generator - ERROR - Error during real-time generation: 
+2024-11-20 17:02:26,158 - handwriting.generator - ERROR - Traceback (most recent call last):
+  File "./handwriting/generator.py", line 316, in stream_write
+    self.nn.bias: [bias]
+concurrent.futures._base.CancelledError
+
+2024-11-20 17:02:29,757 - app.routes - INFO - /generate-stream endpoint took 8.821487426757812e-05 seconds
+2024-11-20 17:02:29,758 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:05:55,892 - app.routes - INFO - /generate-stream endpoint took 0.00017523765563964844 seconds
+2024-11-20 17:05:55,894 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:06:08,166 - handwriting.generator - ERROR - Error during real-time generation: 
+2024-11-20 17:06:08,167 - handwriting.generator - ERROR - Traceback (most recent call last):
+  File "./handwriting/generator.py", line 316, in stream_write
+    self.nn.bias: [bias]
+concurrent.futures._base.CancelledError
+
+2024-11-20 17:06:17,327 - app.routes - INFO - /generate-stream endpoint took 8.630752563476562e-05 seconds
+2024-11-20 17:06:17,328 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:06:35,873 - handwriting.generator - ERROR - Error during real-time generation: 
+2024-11-20 17:06:35,874 - handwriting.generator - ERROR - Traceback (most recent call last):
+  File "./handwriting/generator.py", line 316, in stream_write
+    self.nn.bias: [bias]
+concurrent.futures._base.CancelledError
+
+2024-11-20 17:06:43,325 - app.routes - INFO - /generate-stream endpoint took 7.915496826171875e-05 seconds
+2024-11-20 17:06:43,325 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:07:05,667 - handwriting.generator - ERROR - Error during real-time generation: 
+2024-11-20 17:07:05,667 - handwriting.generator - ERROR - Traceback (most recent call last):
+  File "./handwriting/generator.py", line 316, in stream_write
+    self.nn.bias: [bias]
+concurrent.futures._base.CancelledError
+
+2024-11-20 17:07:06,901 - app.routes - INFO - /generate-stream endpoint took 0.00012183189392089844 seconds
+2024-11-20 17:07:06,902 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:07:24,261 - handwriting.generator - ERROR - Error during real-time generation: 
+2024-11-20 17:07:24,262 - handwriting.generator - ERROR - Traceback (most recent call last):
+  File "./handwriting/generator.py", line 316, in stream_write
+    self.nn.bias: [bias]
+concurrent.futures._base.CancelledError
+
+2024-11-20 17:07:31,300 - app.routes - INFO - /generate-stream endpoint took 8.20159912109375e-05 seconds
+2024-11-20 17:07:31,300 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:07:45,369 - handwriting.generator - ERROR - Error during real-time generation: 
+2024-11-20 17:07:45,369 - handwriting.generator - ERROR - Traceback (most recent call last):
+  File "./handwriting/generator.py", line 316, in stream_write
+    self.nn.bias: [bias]
+concurrent.futures._base.CancelledError
+
+2024-11-20 17:10:40,039 - app.routes - INFO - /generate-stream endpoint took 0.00012421607971191406 seconds
+2024-11-20 17:10:40,039 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:10:55,090 - handwriting.generator - ERROR - Error during real-time generation: 
+2024-11-20 17:10:55,091 - handwriting.generator - ERROR - Traceback (most recent call last):
+  File "./handwriting/generator.py", line 316, in stream_write
+    self.nn.bias: [bias]
+concurrent.futures._base.CancelledError
+
+2024-11-20 17:11:16,971 - app.routes - INFO - /generate-stream endpoint took 0.0001220703125 seconds
+2024-11-20 17:11:16,972 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:12:03,554 - app.routes - INFO - /generate-stream endpoint took 8.130073547363281e-05 seconds
+2024-11-20 17:12:03,555 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:12:29,283 - handwriting.generator - ERROR - Error during real-time generation: 
+2024-11-20 17:12:29,283 - handwriting.generator - ERROR - Traceback (most recent call last):
+  File "./handwriting/generator.py", line 316, in stream_write
+    self.nn.bias: [bias]
+concurrent.futures._base.CancelledError
+
+2024-11-20 17:13:28,771 - app.routes - INFO - /generate-stream endpoint took 0.00011610984802246094 seconds
+2024-11-20 17:13:28,772 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:14:24,817 - app.routes - INFO - /generate-stream endpoint took 0.00012230873107910156 seconds
+2024-11-20 17:14:24,818 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:14:59,275 - app.routes - INFO - /generate-stream endpoint took 7.796287536621094e-05 seconds
+2024-11-20 17:14:59,275 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:15:52,042 - app.routes - INFO - /generate-stream endpoint took 7.009506225585938e-05 seconds
+2024-11-20 17:15:52,042 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:30:19,273 - app.routes - INFO - /generate-stream endpoint took 3.361701965332031e-05 seconds
+2024-11-20 17:30:19,280 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:30:34,767 - app.routes - INFO - /generate-stream endpoint took 3.0517578125e-05 seconds
+2024-11-20 17:30:34,768 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:30:42,183 - app.routes - INFO - /generate-stream endpoint took 2.8133392333984375e-05 seconds
+2024-11-20 17:30:42,184 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:30:49,046 - app.routes - INFO - /generate-stream endpoint took 3.528594970703125e-05 seconds
+2024-11-20 17:30:49,047 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:30:53,488 - app.routes - INFO - /generate-stream endpoint took 3.0040740966796875e-05 seconds
+2024-11-20 17:30:53,488 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:30:58,910 - app.routes - INFO - /generate-stream endpoint took 3.123283386230469e-05 seconds
+2024-11-20 17:30:58,910 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:31:06,444 - app.routes - INFO - /generate-stream endpoint took 3.147125244140625e-05 seconds
+2024-11-20 17:31:06,444 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:31:11,959 - app.routes - INFO - /generate-stream endpoint took 3.075599670410156e-05 seconds
+2024-11-20 17:31:11,959 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:31:16,639 - app.routes - INFO - /generate-stream endpoint took 8.988380432128906e-05 seconds
+2024-11-20 17:31:16,640 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:31:20,500 - app.routes - INFO - /generate-stream endpoint took 3.0040740966796875e-05 seconds
+2024-11-20 17:31:20,501 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:31:23,931 - app.routes - INFO - /generate-stream endpoint took 3.647804260253906e-05 seconds
+2024-11-20 17:31:23,932 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:31:26,410 - app.routes - INFO - /generate-stream endpoint took 4.5299530029296875e-05 seconds
+2024-11-20 17:31:26,411 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:31:30,152 - app.routes - INFO - /generate-stream endpoint took 3.5762786865234375e-05 seconds
+2024-11-20 17:31:30,153 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:31:35,740 - app.routes - INFO - /generate-stream endpoint took 3.5762786865234375e-05 seconds
+2024-11-20 17:31:35,741 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:31:42,610 - app.routes - INFO - /generate-stream endpoint took 2.8848648071289062e-05 seconds
+2024-11-20 17:31:42,610 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:31:45,586 - app.routes - INFO - /generate-stream endpoint took 2.9325485229492188e-05 seconds
+2024-11-20 17:31:45,587 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:31:50,136 - app.routes - INFO - /generate-stream endpoint took 3.0517578125e-05 seconds
+2024-11-20 17:31:50,137 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:31:53,736 - app.routes - INFO - /generate-stream endpoint took 6.127357482910156e-05 seconds
+2024-11-20 17:31:53,737 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:31:59,913 - app.routes - INFO - /generate-stream endpoint took 6.079673767089844e-05 seconds
+2024-11-20 17:31:59,913 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:32:11,802 - app.routes - INFO - /generate-stream endpoint took 3.0994415283203125e-05 seconds
+2024-11-20 17:32:11,803 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:32:16,531 - app.routes - INFO - /generate-stream endpoint took 4.696846008300781e-05 seconds
+2024-11-20 17:32:16,532 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:32:54,494 - app.routes - INFO - /generate-stream endpoint took 3.123283386230469e-05 seconds
+2024-11-20 17:32:54,495 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:33:05,064 - app.routes - INFO - /generate-stream endpoint took 3.695487976074219e-05 seconds
+2024-11-20 17:33:05,065 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:33:11,327 - app.routes - INFO - /generate-stream endpoint took 2.9802322387695312e-05 seconds
+2024-11-20 17:33:11,327 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:33:36,526 - handwriting.generator - INFO - Sampling strokes for handwriting generation...
+2024-11-20 17:33:37,336 - handwriting.generator - INFO - Drawing SVG output...
+2024-11-20 17:33:37,355 - app.routes - INFO - /generate-simple endpoint took 0.829246997833252 seconds
+2024-11-20 17:33:47,857 - app.routes - INFO - /generate-stream endpoint took 2.7418136596679688e-05 seconds
+2024-11-20 17:33:47,858 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:33:53,910 - app.routes - INFO - /generate-stream endpoint took 3.62396240234375e-05 seconds
+2024-11-20 17:33:53,911 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:33:59,453 - app.routes - INFO - /generate-stream endpoint took 2.9802322387695312e-05 seconds
+2024-11-20 17:33:59,454 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:34:03,017 - app.routes - INFO - /generate-stream endpoint took 3.218650817871094e-05 seconds
+2024-11-20 17:34:03,017 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:34:06,269 - app.routes - INFO - /generate-stream endpoint took 3.647804260253906e-05 seconds
+2024-11-20 17:34:06,270 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:34:13,180 - app.routes - INFO - /generate-stream endpoint took 3.3855438232421875e-05 seconds
+2024-11-20 17:34:13,181 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:34:17,575 - app.routes - INFO - /generate-stream endpoint took 3.2901763916015625e-05 seconds
+2024-11-20 17:34:17,576 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:34:22,748 - app.routes - INFO - /generate-stream endpoint took 3.1948089599609375e-05 seconds
+2024-11-20 17:34:22,749 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:34:28,414 - app.routes - INFO - /generate-stream endpoint took 3.170967102050781e-05 seconds
+2024-11-20 17:34:28,414 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:34:32,318 - app.routes - INFO - /generate-stream endpoint took 3.170967102050781e-05 seconds
+2024-11-20 17:34:32,319 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:34:36,050 - app.routes - INFO - /generate-stream endpoint took 5.3882598876953125e-05 seconds
+2024-11-20 17:34:36,050 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:34:39,585 - app.routes - INFO - /generate-stream endpoint took 3.0040740966796875e-05 seconds
+2024-11-20 17:34:39,586 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:34:43,181 - app.routes - INFO - /generate-stream endpoint took 4.792213439941406e-05 seconds
+2024-11-20 17:34:43,182 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:34:49,013 - app.routes - INFO - /generate-stream endpoint took 3.790855407714844e-05 seconds
+2024-11-20 17:34:49,014 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:34:53,476 - app.routes - INFO - /generate-stream endpoint took 6.389617919921875e-05 seconds
+2024-11-20 17:34:53,477 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:35:02,055 - app.routes - INFO - /generate-stream endpoint took 3.814697265625e-05 seconds
+2024-11-20 17:35:02,056 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:35:07,615 - app.routes - INFO - /generate-stream endpoint took 4.9591064453125e-05 seconds
+2024-11-20 17:35:07,615 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:35:11,941 - app.routes - INFO - /generate-stream endpoint took 3.457069396972656e-05 seconds
+2024-11-20 17:35:11,942 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:35:21,043 - app.routes - INFO - /generate-stream endpoint took 3.409385681152344e-05 seconds
+2024-11-20 17:35:21,044 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:35:26,132 - app.routes - INFO - /generate-stream endpoint took 3.504753112792969e-05 seconds
+2024-11-20 17:35:26,133 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:35:31,529 - app.routes - INFO - /generate-stream endpoint took 3.2901763916015625e-05 seconds
+2024-11-20 17:35:31,530 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:35:35,911 - app.routes - INFO - /generate-stream endpoint took 3.647804260253906e-05 seconds
+2024-11-20 17:35:35,911 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:35:40,720 - app.routes - INFO - /generate-stream endpoint took 3.528594970703125e-05 seconds
+2024-11-20 17:35:40,721 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:35:50,727 - app.routes - INFO - /generate-stream endpoint took 3.790855407714844e-05 seconds
+2024-11-20 17:35:50,728 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:36:02,884 - app.routes - INFO - /generate-stream endpoint took 3.62396240234375e-05 seconds
+2024-11-20 17:36:02,885 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:36:06,574 - app.routes - INFO - /generate-stream endpoint took 3.504753112792969e-05 seconds
+2024-11-20 17:36:06,575 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:36:15,587 - app.routes - INFO - /generate-stream endpoint took 3.719329833984375e-05 seconds
+2024-11-20 17:36:15,588 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:36:23,683 - app.routes - INFO - /generate-stream endpoint took 4.649162292480469e-05 seconds
+2024-11-20 17:36:23,684 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:36:34,704 - app.routes - INFO - /generate-stream endpoint took 2.7179718017578125e-05 seconds
+2024-11-20 17:36:34,705 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-20 17:59:17,599 - handwriting.generator - INFO - Sampling strokes for handwriting generation...
+2024-11-20 17:59:27,619 - handwriting.generator - INFO - Drawing SVG output...
+2024-11-20 17:59:27,832 - app.routes - INFO - /generate-simple endpoint took 10.2328462600708 seconds
+2024-11-20 17:59:55,976 - handwriting.generator - INFO - Sampling strokes for handwriting generation...
+2024-11-20 18:00:05,121 - handwriting.generator - INFO - Drawing SVG output...
+2024-11-20 18:00:05,306 - app.routes - INFO - /generate-simple endpoint took 9.33059024810791 seconds
+2024-11-20 18:00:21,049 - handwriting.generator - INFO - Sampling strokes for handwriting generation...
+2024-11-20 18:00:30,727 - handwriting.generator - INFO - Drawing SVG output...
+2024-11-20 18:00:30,903 - app.routes - INFO - /generate-simple endpoint took 9.854100465774536 seconds
+2024-11-20 18:14:46,215 - handwriting.generator - INFO - Sampling strokes for handwriting generation...
+2024-11-20 18:14:48,484 - handwriting.generator - INFO - Drawing SVG output...
+2024-11-20 18:14:48,512 - app.routes - INFO - /generate-simple endpoint took 2.2969143390655518 seconds
+2024-11-20 18:14:56,772 - handwriting.generator - INFO - Sampling strokes for handwriting generation...
+2024-11-20 18:14:59,170 - handwriting.generator - INFO - Drawing SVG output...
+2024-11-20 18:14:59,197 - app.routes - INFO - /generate-simple endpoint took 2.42581844329834 seconds
+2024-11-20 18:15:06,723 - handwriting.generator - INFO - Sampling strokes for handwriting generation...
+2024-11-20 18:15:08,172 - handwriting.generator - INFO - Drawing SVG output...
+2024-11-20 18:15:08,209 - app.routes - INFO - /generate-simple endpoint took 1.4866995811462402 seconds
+2024-11-20 18:15:12,022 - handwriting.generator - INFO - Sampling strokes for handwriting generation...
+2024-11-20 18:15:14,776 - handwriting.generator - INFO - Drawing SVG output...
+2024-11-20 18:15:14,804 - app.routes - INFO - /generate-simple endpoint took 2.7834060192108154 seconds
+2024-11-20 18:15:44,238 - handwriting.generator - INFO - Sampling strokes for handwriting generation...
+2024-11-20 18:15:46,846 - handwriting.generator - INFO - Drawing SVG output...
+2024-11-20 18:15:46,875 - app.routes - INFO - /generate-simple endpoint took 2.637418508529663 seconds
+2024-11-20 18:15:57,633 - handwriting.generator - INFO - Sampling strokes for handwriting generation...
+2024-11-20 18:16:00,214 - handwriting.generator - INFO - Drawing SVG output...
+2024-11-20 18:16:00,243 - app.routes - INFO - /generate-simple endpoint took 2.6097018718719482 seconds
+2024-11-20 18:17:15,305 - handwriting.generator - INFO - Sampling strokes for handwriting generation...
+2024-11-20 18:17:17,910 - handwriting.generator - INFO - Drawing SVG output...
+2024-11-20 18:17:17,941 - app.routes - INFO - /generate-simple endpoint took 2.6366772651672363 seconds
+2024-11-20 18:17:22,556 - handwriting.generator - INFO - Sampling strokes for handwriting generation...
+2024-11-20 18:17:25,146 - handwriting.generator - INFO - Drawing SVG output...
+2024-11-20 18:17:25,177 - app.routes - INFO - /generate-simple endpoint took 2.6216464042663574 seconds
+2024-11-20 18:17:27,028 - handwriting.generator - INFO - Sampling strokes for handwriting generation...
+2024-11-20 18:17:29,579 - handwriting.generator - INFO - Drawing SVG output...
+2024-11-20 18:17:29,609 - app.routes - INFO - /generate-simple endpoint took 2.581866979598999 seconds
+2024-11-20 18:17:39,703 - handwriting.generator - INFO - Sampling strokes for handwriting generation...
+2024-11-20 18:17:42,192 - handwriting.generator - INFO - Drawing SVG output...
+2024-11-20 18:17:42,222 - app.routes - INFO - /generate-simple endpoint took 2.519449234008789 seconds
+2024-11-20 18:17:49,809 - handwriting.generator - INFO - Sampling strokes for handwriting generation...
+2024-11-20 18:17:52,560 - handwriting.generator - INFO - Drawing SVG output...
+2024-11-20 18:17:52,589 - app.routes - INFO - /generate-simple endpoint took 2.780740976333618 seconds
+2024-11-20 18:18:00,222 - handwriting.generator - INFO - Sampling strokes for handwriting generation...
+2024-11-20 18:18:02,937 - handwriting.generator - INFO - Drawing SVG output...
+2024-11-20 18:18:02,966 - app.routes - INFO - /generate-simple endpoint took 2.744727611541748 seconds
+2024-11-20 18:18:14,844 - handwriting.generator - INFO - Sampling strokes for handwriting generation...
+2024-11-20 18:18:17,389 - handwriting.generator - INFO - Drawing SVG output...
+2024-11-20 18:18:17,423 - app.routes - INFO - /generate-simple endpoint took 2.579524517059326 seconds
+2024-11-20 18:18:25,166 - handwriting.generator - INFO - Sampling strokes for handwriting generation...
+2024-11-20 18:18:27,779 - handwriting.generator - INFO - Drawing SVG output...
+2024-11-20 18:18:27,809 - app.routes - INFO - /generate-simple endpoint took 2.6432268619537354 seconds
+2024-11-20 18:30:15,910 - handwriting.generator - INFO - Sampling strokes for handwriting generation...
+2024-11-20 18:30:25,719 - handwriting.generator - INFO - Drawing SVG output...
+2024-11-20 18:30:25,893 - app.routes - INFO - /generate-simple endpoint took 9.984100580215454 seconds
+2024-11-20 18:30:29,221 - handwriting.generator - INFO - Sampling strokes for handwriting generation...
+2024-11-20 18:30:38,583 - handwriting.generator - INFO - Drawing SVG output...
+2024-11-20 18:30:38,762 - app.routes - INFO - /generate-simple endpoint took 9.541935205459595 seconds
+2024-11-20 18:33:05,236 - handwriting.generator - INFO - Sampling strokes for handwriting generation...
+2024-11-20 18:33:14,637 - handwriting.generator - INFO - Drawing SVG output...
+2024-11-20 18:33:14,814 - app.routes - INFO - /generate-simple endpoint took 9.589919805526733 seconds
+2024-11-20 18:34:58,759 - handwriting.generator - INFO - Sampling strokes for handwriting generation...
+2024-11-20 18:35:06,874 - handwriting.generator - INFO - Drawing SVG output...
+2024-11-20 18:35:07,101 - app.routes - INFO - /generate-simple endpoint took 8.34236454963684 seconds
+2024-11-20 18:35:14,344 - handwriting.generator - INFO - Sampling strokes for handwriting generation...
+2024-11-20 18:35:23,614 - handwriting.generator - INFO - Drawing SVG output...
+2024-11-20 18:35:23,792 - app.routes - INFO - /generate-simple endpoint took 9.449079751968384 seconds
+2024-11-20 18:35:28,143 - handwriting.generator - INFO - Sampling strokes for handwriting generation...
+2024-11-20 18:35:37,594 - handwriting.generator - INFO - Drawing SVG output...
+2024-11-20 18:35:37,767 - app.routes - INFO - /generate-simple endpoint took 9.624213457107544 seconds
+2024-11-20 18:35:45,042 - handwriting.generator - INFO - Sampling strokes for handwriting generation...
+2024-11-20 18:35:54,646 - handwriting.generator - INFO - Drawing SVG output...
+2024-11-20 18:35:54,868 - app.routes - INFO - /generate-simple endpoint took 9.827243089675903 seconds
+2024-11-20 19:29:17,897 - uvicorn.error - INFO - Shutting down
+2024-11-20 19:29:18,004 - uvicorn.error - INFO - Waiting for application shutdown.
+2024-11-20 19:29:18,009 - uvicorn.error - INFO - Application shutdown complete.
+2024-11-20 19:29:18,010 - uvicorn.error - INFO - Finished server process [81982]
+2024-11-21 16:39:49,617 - root - INFO - 
+new run with parameters:
+{'attention_mixture_components': 10,
+ 'batch_size': 32,
+ 'batch_sizes': [32, 64, 64],
+ 'beta1_decay': 0.9,
+ 'beta1_decays': [0.9, 0.9, 0.9],
+ 'checkpoint_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/checkpoints',
+ 'early_stopping_steps': 1500,
+ 'enable_parameter_averaging': False,
+ 'grad_clip': 10,
+ 'keep_prob_scalar': 1.0,
+ 'learning_rate': 0.0001,
+ 'learning_rates': [0.0001, 5e-05, 2e-05],
+ 'log_dir': '/home/parthsolanke/dev/Penman/backend/logs',
+ 'log_interval': 20,
+ 'logging_level': 20,
+ 'loss_averaging_window': 100,
+ 'lstm_size': 400,
+ 'min_steps_to_checkpoint': 2000,
+ 'num_restarts': 2,
+ 'num_training_steps': 100000,
+ 'optimizer': 'rms',
+ 'output_mixture_components': 20,
+ 'output_units': 121,
+ 'patiences': [1500, 1000, 500],
+ 'prediction_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/predictions',
+ 'reader': None,
+ 'regularization_constant': 0.0,
+ 'restart_idx': 0,
+ 'validation_batch_size': 32,
+ 'warm_start_init_step': 17900}
+2024-11-21 16:39:51,931 - root - INFO - all parameters:
+2024-11-21 16:39:51,932 - root - INFO - [('Variable:0', []),
+ ('Variable_1:0', []),
+ ('Variable_2:0', []),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp_1:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp_1:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp:0', [30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp_1:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp_1:0', [1600]),
+ ('rnn/gmm/weights/RMSProp:0', [400, 121]),
+ ('rnn/gmm/weights/RMSProp_1:0', [400, 121]),
+ ('rnn/gmm/biases/RMSProp:0', [121]),
+ ('rnn/gmm/biases/RMSProp_1:0', [121])]
+2024-11-21 16:39:51,932 - root - INFO - trainable parameters:
+2024-11-21 16:39:51,932 - root - INFO - [('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121])]
+2024-11-21 16:39:51,932 - root - INFO - trainable parameter count:
+2024-11-21 16:39:51,932 - root - INFO - 3632431
+2024-11-21 16:39:51,965 - root - INFO - built graph
+2024-11-21 16:39:51,970 - root - INFO - restoring model parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-21 16:39:51,970 - tensorflow - INFO - Restoring parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-21 16:39:52,266 - uvicorn.error - INFO - Started server process [2533]
+2024-11-21 16:39:52,266 - uvicorn.error - INFO - Waiting for application startup.
+2024-11-21 16:39:52,266 - uvicorn.error - INFO - Application startup complete.
+2024-11-21 16:39:52,267 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2024-11-21 16:40:47,083 - app.routes - INFO - /generate-stream endpoint took 9.942054748535156e-05 seconds
+2024-11-21 16:40:47,095 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-21 16:41:06,544 - handwriting.generator - ERROR - Error during real-time generation: 
+2024-11-21 16:41:06,545 - handwriting.generator - ERROR - Traceback (most recent call last):
+  File "./handwriting/generator.py", line 316, in stream_write
+    self.nn.bias: [bias]
+concurrent.futures._base.CancelledError
+
+2024-11-21 16:55:24,924 - uvicorn.error - INFO - Shutting down
+2024-11-21 16:55:25,025 - uvicorn.error - INFO - Waiting for application shutdown.
+2024-11-21 16:55:25,025 - uvicorn.error - INFO - Application shutdown complete.
+2024-11-21 16:55:25,026 - uvicorn.error - INFO - Finished server process [2533]
+2024-11-21 16:55:29,895 - root - INFO - 
+new run with parameters:
+{'attention_mixture_components': 10,
+ 'batch_size': 32,
+ 'batch_sizes': [32, 64, 64],
+ 'beta1_decay': 0.9,
+ 'beta1_decays': [0.9, 0.9, 0.9],
+ 'checkpoint_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/checkpoints',
+ 'early_stopping_steps': 1500,
+ 'enable_parameter_averaging': False,
+ 'grad_clip': 10,
+ 'keep_prob_scalar': 1.0,
+ 'learning_rate': 0.0001,
+ 'learning_rates': [0.0001, 5e-05, 2e-05],
+ 'log_dir': '/home/parthsolanke/dev/Penman/backend/logs',
+ 'log_interval': 20,
+ 'logging_level': 20,
+ 'loss_averaging_window': 100,
+ 'lstm_size': 400,
+ 'min_steps_to_checkpoint': 2000,
+ 'num_restarts': 2,
+ 'num_training_steps': 100000,
+ 'optimizer': 'rms',
+ 'output_mixture_components': 20,
+ 'output_units': 121,
+ 'patiences': [1500, 1000, 500],
+ 'prediction_dir': '/home/parthsolanke/dev/Penman/backend/handwriting/predictions',
+ 'reader': None,
+ 'regularization_constant': 0.0,
+ 'restart_idx': 0,
+ 'validation_batch_size': 32,
+ 'warm_start_init_step': 17900}
+2024-11-21 16:55:32,283 - root - INFO - all parameters:
+2024-11-21 16:55:32,284 - root - INFO - [('Variable:0', []),
+ ('Variable_1:0', []),
+ ('Variable_2:0', []),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/kernel/RMSProp_1:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/weights/RMSProp_1:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp:0', [30]),
+ ('rnn/LSTMAttentionCell/attention/biases/RMSProp_1:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias/RMSProp_1:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel/RMSProp_1:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias/RMSProp_1:0', [1600]),
+ ('rnn/gmm/weights/RMSProp:0', [400, 121]),
+ ('rnn/gmm/weights/RMSProp_1:0', [400, 121]),
+ ('rnn/gmm/biases/RMSProp:0', [121]),
+ ('rnn/gmm/biases/RMSProp_1:0', [121])]
+2024-11-21 16:55:32,284 - root - INFO - trainable parameters:
+2024-11-21 16:55:32,284 - root - INFO - [('rnn/LSTMAttentionCell/lstm_cell/kernel:0', [476, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/attention/weights:0', [476, 30]),
+ ('rnn/LSTMAttentionCell/attention/biases:0', [30]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_1/bias:0', [1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/kernel:0', [876, 1600]),
+ ('rnn/LSTMAttentionCell/lstm_cell_2/bias:0', [1600]),
+ ('rnn/gmm/weights:0', [400, 121]),
+ ('rnn/gmm/biases:0', [121])]
+2024-11-21 16:55:32,284 - root - INFO - trainable parameter count:
+2024-11-21 16:55:32,284 - root - INFO - 3632431
+2024-11-21 16:55:32,301 - root - INFO - built graph
+2024-11-21 16:55:32,302 - root - INFO - restoring model parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-21 16:55:32,303 - tensorflow - INFO - Restoring parameters from /home/parthsolanke/dev/Penman/backend/handwriting/checkpoints/model-17900
+2024-11-21 16:55:32,511 - uvicorn.error - INFO - Started server process [7312]
+2024-11-21 16:55:32,512 - uvicorn.error - INFO - Waiting for application startup.
+2024-11-21 16:55:32,512 - uvicorn.error - INFO - Application startup complete.
+2024-11-21 16:55:32,513 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2024-11-21 17:00:15,158 - app.routes - INFO - /generate-stream endpoint took 7.367134094238281e-05 seconds
+2024-11-21 17:00:15,167 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-21 17:05:37,804 - app.routes - INFO - /generate-stream endpoint took 8.58306884765625e-05 seconds
+2024-11-21 17:05:37,804 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-21 17:06:15,100 - app.routes - INFO - /generate-stream endpoint took 7.82012939453125e-05 seconds
+2024-11-21 17:06:15,100 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-21 17:07:06,874 - app.routes - INFO - /generate-stream endpoint took 8.20159912109375e-05 seconds
+2024-11-21 17:07:06,874 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-21 17:07:16,672 - handwriting.generator - ERROR - Error during real-time generation: 
+2024-11-21 17:07:16,673 - handwriting.generator - ERROR - Traceback (most recent call last):
+  File "./handwriting/generator.py", line 316, in stream_write
+    self.nn.bias: [bias]
+concurrent.futures._base.CancelledError
+
+2024-11-21 17:07:58,490 - app.routes - INFO - /generate-stream endpoint took 0.00011372566223144531 seconds
+2024-11-21 17:07:58,491 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-21 17:08:43,410 - app.routes - INFO - /generate-stream endpoint took 7.414817810058594e-05 seconds
+2024-11-21 17:08:43,411 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-21 17:08:55,471 - handwriting.generator - ERROR - Error during real-time generation: 
+2024-11-21 17:08:55,472 - handwriting.generator - ERROR - Traceback (most recent call last):
+  File "./handwriting/generator.py", line 316, in stream_write
+    self.nn.bias: [bias]
+concurrent.futures._base.CancelledError
+
+2024-11-21 17:09:54,084 - app.routes - INFO - /generate-stream endpoint took 9.751319885253906e-05 seconds
+2024-11-21 17:09:54,085 - handwriting.generator - INFO - Starting handwriting stream...
+2024-11-21 17:38:41,131 - uvicorn.error - INFO - Shutting down
+2024-11-21 17:38:41,243 - uvicorn.error - INFO - Waiting for application shutdown.
+2024-11-21 17:38:41,244 - uvicorn.error - INFO - Application shutdown complete.
+2024-11-21 17:38:41,244 - uvicorn.error - INFO - Finished server process [7312]
